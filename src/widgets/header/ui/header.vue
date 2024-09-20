@@ -12,7 +12,7 @@
             <nuxt-link class="header__link" tag="a" >Connect a wallet</nuxt-link>
           </nav>
 
-          <Button class="header__button" type="border"  size="secondary" :padding="30">
+          <Button class="header__button" size="secondary" :padding="30">
             <template v-slot:icon>
               <icoUser />
             </template>
