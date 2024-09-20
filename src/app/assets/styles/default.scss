@@ -6,6 +6,7 @@ body, html {
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
+  background: $color-black-200;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -14,4 +15,17 @@ p, h1, h2, h3, h4, h5, h6 {
 
 img, video {
   display: block;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 115px;
+}
+
+.container-big {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 50px;
 }

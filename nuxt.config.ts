@@ -7,7 +7,21 @@ export default defineNuxtConfig({
     pages: 'routes'
   },
   alias: {
-    assets: '/app/assets',
+    'assets': '/app/assets',
+  },
+  components: {
+    dirs: [
+      {
+        path: '~/widgets',
+        pathPrefix: false,
+        global: true
+      },
+      {
+        path: '~/shared',
+        pathPrefix: false,
+        global: true
+      },
+    ]
   },
   css: ['assets/styles/main.scss', 'normalize.css'],
 })
