@@ -1,10 +1,9 @@
-<template>
-  <p class="text">Discover digital art & Collect NFTs</p>
-</template>
+<script setup lang="ts">
+import PreviewSection from "./sections/preview-section.vue";
+</script>
 
-<style lang="scss">
-.text {
-  font-weight: 600;
-  font-family: 'Work Sans', sans-serif;
-}
-</style>
+<template>
+  <div>
+    <PreviewSection/>
+  </div>
+</template>
