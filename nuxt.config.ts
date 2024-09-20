@@ -4,10 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src/',
   dir: {
-    pages: 'routes'
+    pages: 'routes',
+    assets: 'app/assets',
   },
   alias: {
-    'assets': '/app/assets',
+    '~assets': '@/app/assets',
   },
   components: {
     dirs: [
@@ -23,5 +24,14 @@ export default defineNuxtConfig({
       },
     ]
   },
-  css: ['assets/styles/main.scss', 'normalize.css'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/app/assets/styles/main.scss";',
+        }
+      }
+    }
+  },
+  css: ['normalize.css'],
 })

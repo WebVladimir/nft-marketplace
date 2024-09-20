@@ -39,13 +39,13 @@ withDefaults(defineProps<Props>(), {
 </template>
 
 <style lang="scss">
-@import "assets/styles/vars.scss";
-//color
+//Color
 .purple {
   --color-main: #{$call-to-action};
   --color-secondary: #{$color-white-100};
 }
 
+//Main
 .button {
   &__inner {
     display: flex;
@@ -80,7 +80,7 @@ withDefaults(defineProps<Props>(), {
   }
 }
 
-// Size
+//Size
 .button {
   &.primary {
     .button__inner {
@@ -105,7 +105,7 @@ withDefaults(defineProps<Props>(), {
   }
 }
 
-// Type
+//Type
 .button {
   &.fill {
     .button__inner {

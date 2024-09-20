@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import { useHeader } from "~/shared/button/model/useHeader";
+const model = useHeader()
+
+const isOpen = ref(false)
+
+function openMenu() {
+  isOpen.value = !isOpen.value
+  document.body.classList.toggle('lock', isOpen.value)
+}
+
+function hideMenu() {
+  isOpen.value = false
+  document.body.classList.remove('lock')
+}
+</script>
+
 <template>
   <header class="header">
     <div class="container-big header__container">
@@ -5,26 +22,31 @@
         <nuxt-link class="header__logo" tag="a" to="/">
           <img src="/images/logo.svg" alt="logo" class="header__logo-img">
         </nuxt-link>
-        <div class="header__body">
+        <div :class="['header__body', {'header__body_active': isOpen}]" ref="headerBody">
           <nav class="header__menu">
-            <nuxt-link class="header__link" tag="a" >Marketplace</nuxt-link>
-            <nuxt-link class="header__link" tag="a" >Rankings</nuxt-link>
-            <nuxt-link class="header__link" tag="a" >Connect a wallet</nuxt-link>
+            <nuxt-link
+              class="header__link"
+              tag="a"
+              v-for="(link, index) in model.menuLinks"
+              :key="index"
+              @click="hideMenu"
+            >
+              {{ link.label }}
+            </nuxt-link>
           </nav>
 
           <Button class="header__button" size="secondary" :padding="30">
             <template v-slot:icon>
               <icoUser />
             </template>
-
             Sign Up
           </Button>
         </div>
 
-        <div class="header__burger">
-          <span class="header__burger-line" />
-          <span class="header__burger-line" />
-          <span class="header__burger-line" />
+        <div :class="['header__burger', {'header__burger_active': isOpen}]" @click="openMenu">
+          <span class="header__burger-line header__burger-line_1" />
+          <span class="header__burger-line header__burger-line_2" />
+          <span class="header__burger-line header__burger-line_3" />
         </div>
       </div>
     </div>
@@ -32,28 +54,72 @@
 </template>
 
 <style lang="scss">
-@import "assets/styles/vars.scss";
-
 .header {
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
+
+    @include tablet {
+      padding: 15px 0;
+    }
   }
 
   &__body {
     display: flex;
     align-items: center;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: $color-black-200;
+      padding: 54px 50px 0 50px;
+      transform: scale(0.5);
+      border-radius: 20px;
+      opacity: 0;
+      transition: transform .3s ease-in-out, opacity .3s ease-in-out, border .3s ease-in-out;
+
+      &_active {
+        opacity: 1;
+        transform: scale(1);
+        border-radius: 0;
+      }
+    }
+
+    @include mobile {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
   &__logo {
+    position: relative;
     width: 243px;
     height: 32px;
+    z-index: 2;
+
+    @include tablet {
+      width: 183px;
+      height: 24px;
+    }
   }
 
   &__menu {
     margin-right: 10px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
   }
 
   &__link {
@@ -65,21 +131,52 @@
 
     &:not(:last-child) {
       margin-right: 10px;
+
+      @include tablet {
+        margin: 0 0 30px 0;
+      }
+    }
+
+    @include tablet {
+      padding: 0;
     }
   }
 
-  &__button {}
-
   &__burger {
     display: none;
+    flex-shrink: 0;
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    @include tablet {
+      display: block;
+    }
   }
 
   &__burger-line {
-    &_1 {}
+    display: block;
+    position: absolute;
+    border-radius: 100px;
+    height: 2px;
+    background: white;
+    left: 2px;
 
-    &_2 {}
+    &_1 {
+      width: 14px;
+      top: 4px;
+    }
 
-    &_3 {}
+    &_2 {
+      width: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &_3 {
+      width: 14px;
+      bottom: 4px;
+    }
   }
 }
 </style>
