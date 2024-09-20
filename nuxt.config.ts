@@ -3,13 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   srcDir: 'src/',
+
   dir: {
-    pages: 'routes',
-    assets: 'app/assets',
+    pages: 'routes'
   },
-  alias: {
-    '~assets': '@/app/assets',
-  },
+
   components: {
     dirs: [
       {
@@ -24,14 +22,25 @@ export default defineNuxtConfig({
       },
     ]
   },
+
+  alias: {
+    '~assets': "/app/assets",
+  },
+
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/app/assets/styles/main.scss";',
+          additionalData: '@import "~assets/styles/main.scss";',
         }
       }
     }
   },
+
   css: ['normalize.css'],
+  modules: ['@nuxt/image'],
+
+  image: {
+    dir: 'app/assets/images',
+  }
 })

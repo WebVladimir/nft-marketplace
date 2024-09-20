@@ -1,7 +1,7 @@
 @mixin font-face($font-family, $font-name, $font-weight) {
   @font-face {
     font-family: $font-family;
-    src: url('./fonts/#{$font-name}.woff2') format('woff2'), url('./fonts/#{$font-name}.woff') format('woff');
+    src: url('~assets/fonts/#{$font-family}/#{$font-name}.woff2') format('woff2'), url('~assets/fonts/#{$font-family}/#{$font-name}.woff') format('woff');
     font-weight: $font-weight;
     font-style: normal;
   }
@@ -14,7 +14,90 @@
 }
 
 @mixin mobile() {
-  @media (max-width: $tablet-width) {
+  @media (max-width: $mobile-width) {
     @content
   }
+}
+
+//Texts
+//SpaceMono
+@mixin s-h1 {
+  font-family: "SpaceMono", sans-serif;
+  font-size: 67px;
+  font-weight: 700;
+  line-height: 110%;
+}
+@mixin s-h2 {
+  font-family: "SpaceMono", sans-serif;
+  font-size: 51px;
+  font-weight: 700;
+  line-height: 110%;
+}
+@mixin s-h3 {
+  font-family: "SpaceMono", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 120%;
+}
+@mixin s-h4 {
+  font-family: "SpaceMono", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 140%;
+}
+@mixin s-h5 {
+  font-family: "SpaceMono", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 160%;
+}
+@mixin s-base {
+  font-family: "SpaceMono", sans-serif;
+  line-height: 140%;
+}
+@mixin s-caption {
+  font-family: "SpaceMono", sans-serif;
+  font-size: 12px;
+  line-height: 110%;
+}
+
+//WorkSans
+@mixin w-h1 {
+  font-family: "WorkSans", sans-serif;
+  font-size: 67px;
+  font-weight: 600;
+  line-height: 110%;
+}
+@mixin w-h2 {
+  font-family: "WorkSans", sans-serif;
+  font-size: 51px;
+  font-weight: 600;
+  line-height: 110%;
+}
+@mixin w-h3 {
+  font-family: "WorkSans", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 120%;
+}
+@mixin w-h4 {
+  font-family: "WorkSans", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 140%;
+}
+@mixin w-h5 {
+  font-family: "WorkSans", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 140%;
+}
+@mixin w-base {
+  font-family: "WorkSans", sans-serif;
+  line-height: 140%;
+}
+@mixin w-caption {
+  font-family: "WorkSans", sans-serif;
+  font-size: 12px;
+  line-height: 110%;
 }

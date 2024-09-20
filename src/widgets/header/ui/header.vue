@@ -85,11 +85,13 @@ function hideMenu() {
       border-radius: 20px;
       opacity: 0;
       transition: transform .3s ease-in-out, opacity .3s ease-in-out, border .3s ease-in-out;
+      pointer-events: none;
 
       &_active {
         opacity: 1;
         transform: scale(1);
         border-radius: 0;
+        pointer-events: auto;
       }
     }
 
@@ -123,11 +125,30 @@ function hideMenu() {
   }
 
   &__link {
+    @include w-base();
+    position: relative;
     padding: 0 20px;
     color: $color-white-100;
     font-weight: 600;
-    line-height: 140%;
     cursor: pointer;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -5px;
+      height: 2px;
+      width: 50%;
+      background: $call-to-action;
+      opacity: 0;
+      transition: opacity .2s ease-in-out;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
 
     &:not(:last-child) {
       margin-right: 10px;

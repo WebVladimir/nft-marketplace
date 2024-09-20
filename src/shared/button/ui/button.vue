@@ -47,11 +47,19 @@ withDefaults(defineProps<Props>(), {
 
 //Main
 .button {
+  display: inline-block;
+
   &__inner {
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 20px;
     cursor: pointer;
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+      transform: scale(0.95);
+    }
 
     &_reverse {
       flex-direction: row-reverse;
@@ -74,9 +82,9 @@ withDefaults(defineProps<Props>(), {
   }
 
   &__text {
+    @include w-base;
     font-weight: 600;
-    line-height: 140%;
-    text-transform: capitalize;
+    line-height: 0;
   }
 }
 
