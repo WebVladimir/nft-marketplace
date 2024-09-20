@@ -169,9 +169,18 @@ function hideMenu() {
     position: relative;
     width: 24px;
     height: 24px;
+    transition: transform .2s ease-in-out;
 
     @include tablet {
       display: block;
+    }
+
+    &_active {
+      transform: rotate(-90deg);
+
+      .header__burger-line {
+        background: $call-to-action;
+      }
     }
   }
 
@@ -180,8 +189,9 @@ function hideMenu() {
     position: absolute;
     border-radius: 100px;
     height: 2px;
-    background: white;
+    background: $color-white-100;
     left: 2px;
+    transition: background .2s ease-in-out;
 
     &_1 {
       width: 14px;
