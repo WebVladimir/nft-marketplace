@@ -13,7 +13,6 @@ const cards = computed(() => {
 </script>
 
 <template>
-  {{ cards }}
   <section class="trending-section">
     <div class="container trending-section__container">
       <div class="trending-section__inner">
