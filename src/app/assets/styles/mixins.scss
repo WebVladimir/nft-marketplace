@@ -95,6 +95,8 @@
 @mixin w-base {
   font-family: "WorkSans", sans-serif;
   line-height: 140%;
+  font-size: 16px;
+  font-weight: 400;
 }
 @mixin w-caption {
   font-family: "WorkSans", sans-serif;

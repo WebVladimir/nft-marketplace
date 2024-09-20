@@ -53,7 +53,7 @@ function hideMenu() {
   </header>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .header {
   &__inner {
     display: flex;
@@ -125,7 +125,7 @@ function hideMenu() {
   }
 
   &__link {
-    @include w-base();
+    @include w-base;
     position: relative;
     padding: 0 20px;
     color: $color-white-100;

@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   },
 
   css: ['normalize.css'],
-  modules: ['@nuxt/image'],
+  modules: ['@nuxt/image', '@nuxtjs/device'],
 
   image: {
     dir: 'app/assets/images',

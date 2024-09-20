@@ -57,7 +57,7 @@ const model = usePreviewSection();
   </section>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .preview-section {
   &__inner {
     display: flex;
@@ -114,7 +114,6 @@ const model = usePreviewSection();
     @include tablet {
       @include w-base;
       margin-bottom: 20px;
-      font-size: 16px;
     }
 
     @include mobile {
