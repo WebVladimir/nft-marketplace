@@ -39,6 +39,8 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss">
 .artist-card {
+  cursor: pointer;
+
   &__inner {
     position: relative;
     border-radius: 20px;
