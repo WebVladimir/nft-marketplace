@@ -4,7 +4,7 @@ import type {
   ButtonSizeType,
   ButtonPaddingType,
   ButtonColorType
-} from "~/shared/button/model/types";
+} from "../model/typesButton";
 
 interface Props {
   size?: ButtonSizeType

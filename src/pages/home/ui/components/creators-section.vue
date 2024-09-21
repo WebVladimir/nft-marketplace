@@ -31,6 +31,13 @@ const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.creators)
             <artist-card :data="creator" :type="$device.isMobileOrTablet ? 'horizontal-big' : 'default'"/>
           </div>
         </div>
+
+        <Button class="creators-section__button" size="tertiary" type="border">
+          <template v-slot:icon>
+            <IcoRocket/>
+          </template>
+          View Rankings
+        </Button>
       </div>
     </div>
   </section>
@@ -58,6 +65,19 @@ const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.creators)
     display: flex;
     flex-wrap: wrap;
     margin: -15px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    display: none;
+    width: 100%;
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__item {

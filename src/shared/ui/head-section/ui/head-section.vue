@@ -34,6 +34,10 @@ defineProps<Props>()
       margin-right: 20px;
     }
 
+    &:last-child {
+      align-self: flex-end;
+    }
+
     &_mobile-hide {
       @include mobile {
         display: none;
