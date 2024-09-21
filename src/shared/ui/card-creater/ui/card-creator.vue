@@ -2,11 +2,11 @@
 interface Data {
   title: string
   avatar: string
-  name: string
+  name: string,
 }
 
 interface Props {
-  data: Data
+  data: Data,
 }
 
 defineProps<Props>()
@@ -35,7 +35,7 @@ defineProps<Props>()
   &__title {
     @include s-h5;
     color: $color-white-100;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
   }
 
   &__name {

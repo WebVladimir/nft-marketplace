@@ -8,10 +8,10 @@ import SectionNfts from "~/pages/home/ui/components/section-nfts.vue";
 
 <template>
   <div>
-    <SectionPreview/>
-    <SectionTrending/>
-    <SectionCreators/>
-    <SectionCategories/>
-    <SectionNfts/>
+    <SectionPreview />
+    <SectionTrending />
+    <SectionCreators />
+    <SectionCategories />
+    <SectionNfts />
   </div>
 </template>
