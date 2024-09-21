@@ -19,5 +19,8 @@
   },
   "devDependencies": {
     "sass": "^1.78.0"
+  },
+  "volta": {
+    "node": "21.3.0"
   }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useHeader } from "~/shared/button/model/useHeader";
+import { useHeader } from "~/widgets/header/model/useHeader";
 const model = useHeader()
 
 const isOpen = ref(false)
@@ -81,15 +81,16 @@ function hideMenu() {
       bottom: 0;
       background: $color-black-200;
       padding: 54px 50px 0 50px;
-      transform: scale(0.5);
+      transform: scale(0.5) translateZ(0);
       border-radius: 20px;
       opacity: 0;
       transition: transform .3s ease-in-out, opacity .3s ease-in-out, border .3s ease-in-out;
       pointer-events: none;
+      z-index: 10;
 
       &_active {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) translateZ(0);
         border-radius: 0;
         pointer-events: auto;
       }
@@ -105,7 +106,7 @@ function hideMenu() {
     position: relative;
     width: 243px;
     height: 32px;
-    z-index: 2;
+    z-index: 11;
 
     @include tablet {
       width: 183px;
@@ -170,6 +171,7 @@ function hideMenu() {
     width: 24px;
     height: 24px;
     transition: transform .2s ease-in-out;
+    z-index: 11;
 
     @include tablet {
       display: block;

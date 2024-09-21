@@ -1,15 +1,11 @@
 <script setup lang="ts">
 import TrendCard from "./trend-card.vue";
 import { useTrendingSection } from "~/pages/home/model/useTrendingSection";
+import { getCountElemsOfDevice } from "~/shared/ui/utils/getCountElemsOfDevice";
 import { useDevice } from "#imports";
-const { isTablet, isMobile } = useDevice();
 
 const model = useTrendingSection()
-
-const cards = computed(() => {
-  const limit = isTablet ? 2 : isMobile ? 1 : 3;
-  return model.trendings.slice(0, limit);
-})
+const cards = getCountElemsOfDevice(useDevice, 3, 2, 1, model.trendings)
 </script>
 
 <template>

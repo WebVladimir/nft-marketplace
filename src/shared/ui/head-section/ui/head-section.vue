@@ -30,6 +30,9 @@ defineProps<Props>()
   }
 
   &__column {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
 
     &_mobile-hide {
       @include mobile {
