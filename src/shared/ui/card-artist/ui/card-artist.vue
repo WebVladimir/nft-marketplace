@@ -49,6 +49,11 @@ withDefaults(defineProps<Props>(), {
     border-radius: 20px;
     padding: 20px;
     background: $color-black-100;
+    transition: box-shadow .3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 0 2px $call-to-action;
+    }
   }
 
   &__content {

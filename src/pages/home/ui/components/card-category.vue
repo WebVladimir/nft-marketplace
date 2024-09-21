@@ -39,6 +39,15 @@ defineProps<Props>()
     height: 100%;
     border-radius: 20px;
     overflow: hidden;
+
+    &:hover {
+      .card-category__image:after {
+        backdrop-filter: blur(0);
+      }
+      .card-category__ico  {
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
   }
 
   &__image {
@@ -55,6 +64,8 @@ defineProps<Props>()
       top: 0;
       background: rgba(255, 255, 255, 0.10);
       backdrop-filter: blur(7.5px);
+      transition: backdrop-filter .3s ease-in-out;
+      transition-delay: .3s;
     }
 
     @include mobile {
@@ -75,10 +86,11 @@ defineProps<Props>()
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     width: 40%;
     height: 40%;
     z-index: 2;
+    transition: transform .3s ease-in-out;
   }
 
   &__bottom {
