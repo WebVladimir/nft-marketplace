@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Type } from '../model/types';
+import type { Type } from '../model/typesArtistCard';
 
 interface Props {
   data: {
