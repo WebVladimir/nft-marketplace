@@ -1,4 +1,4 @@
-export const useCreatorsSection = () => {
+export const useSectionCreators = () => {
   interface Creator {
     id: number,
     name: string,

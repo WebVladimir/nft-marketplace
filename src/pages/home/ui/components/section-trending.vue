@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import TrendCard from "./trend-card.vue";
-import { useTrendingSection } from "~/pages/home/model/useTrendingSection";
+import CardTrend from "./card-trend.vue";
+import { useSectionTrending } from "../../model/useSectionTrending";
 import { getCountElemsOfDevice } from "~/shared/ui/utils/getCountElemsOfDevice";
 import { useDevice } from "#imports";
 
-const model = useTrendingSection()
+const model = useSectionTrending()
 const cards = getCountElemsOfDevice(useDevice, 3, 2, 1, model.trendings)
 </script>
 
 <template>
-  <section class="trending-section">
-    <div class="container trending-section__container">
-      <div class="trending-section__inner">
+  <section class="section-trending">
+    <div class="container section-trending__container">
+      <div class="section-trending__inner">
         <HeadSection
-          class="trending-section__head"
+          class="section-trending__head"
           title="Trending Collection"
           description="Checkout our weekly updated trending collection."
         />
-        <div class="trending-section__items">
-          <div class="trending-section__item" v-for="card in cards">
-            <TrendCard :data="card" />
+        <div class="section-trending__items">
+          <div class="section-trending__item" v-for="card in cards">
+            <CardTrend :data="card" />
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@ const cards = getCountElemsOfDevice(useDevice, 3, 2, 1, model.trendings)
 </template>
 
 <style scoped lang="scss">
-.trending-section {
+.section-trending {
   &__inner {
     padding: 80px 0;
 

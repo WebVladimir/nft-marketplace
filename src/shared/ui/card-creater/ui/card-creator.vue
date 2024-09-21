@@ -13,21 +13,21 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="creator-card">
-    <div class="creator-card__inner">
-      <p class="creator-card__title"> {{ data.title }} </p>
-      <div class="creator-card__bottom">
-        <div class="creator-card__avatar">
+  <div class="card-creator">
+    <div class="card-creator__inner">
+      <p class="card-creator__title"> {{ data.title }} </p>
+      <div class="card-creator__bottom">
+        <div class="card-creator__avatar">
           <NuxtImg :src="`/avatars/${data.avatar}.png`" />
         </div>
-        <p class="creator-card__name">{{ data.name }}</p>
+        <p class="card-creator__name">{{ data.name }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.creator-card {
+.card-creator {
   &__bottom {
     display: flex;
   }

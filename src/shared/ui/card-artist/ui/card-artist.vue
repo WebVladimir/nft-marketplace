@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Type } from '../model/typesArtistCard';
+import type { Type } from '../model/typesCardArtist';
 
 interface Props {
   data: {
@@ -17,28 +17,28 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['artist-card', type]">
-    <div class="artist-card__inner">
-      <div class="artist-card__avatar">
-        <NuxtImg :src="`/avatars/${data.avatar}.png`" class="artist-card__avatar-img" />
+  <div :class="['card-artist', type]">
+    <div class="card-artist__inner">
+      <div class="card-artist__avatar">
+        <NuxtImg :src="`/avatars/${data.avatar}.png`" class="card-artist__avatar-img" />
       </div>
-      <div class="artist-card__content">
-        <p class="artist-card__name">{{ data.name }}</p>
-        <div class="artist-card__row">
-          <p class="artist-card__description">Total Sales:</p>
-          <p class="artist-card__sales">{{ data.totalSales }} ETH</p>
+      <div class="card-artist__content">
+        <p class="card-artist__name">{{ data.name }}</p>
+        <div class="card-artist__row">
+          <p class="card-artist__description">Total Sales:</p>
+          <p class="card-artist__sales">{{ data.totalSales }} ETH</p>
         </div>
       </div>
 
-      <div class="artist-card__position">
-        <span class="artist-card__position-count">{{ data.position }}</span>
+      <div class="card-artist__position">
+        <span class="card-artist__position-count">{{ data.position }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.artist-card {
+.card-artist {
   cursor: pointer;
 
   &__inner {
@@ -95,103 +95,103 @@ withDefaults(defineProps<Props>(), {
   }
 
   &.default {
-    .artist-card__avatar {
+    .card-artist__avatar {
       width: 120px;
       height: 120px;
       margin: 0 auto 20px auto;
       aspect-ratio: 1 / 1;
     }
 
-    .artist-card__content {
+    .card-artist__content {
       align-items: center;
     }
 
-    .artist-card__row {
+    .card-artist__row {
       justify-content: center;
     }
 
-    .artist-card__position {
+    .card-artist__position {
       left: 20px;
       top: 20px;
     }
 
-    .artist-card__name {
+    .card-artist__name {
       margin-bottom: 5px;
     }
   }
 
   &.horizontal-big {
-    .artist-card__avatar {
+    .card-artist__avatar {
       width: 60px;
       height: 60px;
       margin-right: 20px;
     }
 
-    .artist-card__inner {
+    .card-artist__inner {
       display: flex;
       align-items: center;
     }
 
-    .artist-card__position {
+    .card-artist__position {
       left: 13px;
       top: 13px;
     }
 
-    .artist-card__description {
+    .card-artist__description {
       line-height: 110%;
     }
 
-    .artist-card__name {
+    .card-artist__name {
       margin-bottom: 5px;
     }
   }
 
   &.horizontal-medium {
-    .artist-card__avatar {
+    .card-artist__avatar {
       width: 24px;
       height: 24px;
       margin-right: 12px;
     }
 
-    .artist-card__position {
+    .card-artist__position {
       display: none;
     }
 
-    .artist-card__inner {
+    .card-artist__inner {
       display: flex;
       align-items: center;
     }
 
-    .artist-card__row {
+    .card-artist__row {
       display: none;
     }
 
-    .artist-card__name {
+    .card-artist__name {
       margin: 0;
     }
   }
 
   &.horizontal-small {
-    .artist-card__avatar {
+    .card-artist__avatar {
       width: 24px;
       height: 24px;
       margin-right: 12px;
     }
 
-    .artist-card__position {
+    .card-artist__position {
       display: none;
     }
 
-    .artist-card__inner {
+    .card-artist__inner {
       display: flex;
       align-items: center;
     }
 
-    .artist-card__row {
+    .card-artist__row {
       display: none;
     }
 
-    .artist-card__name {
+    .card-artist__name {
       @include w-base;
       margin: 0;
       line-height: 110%;

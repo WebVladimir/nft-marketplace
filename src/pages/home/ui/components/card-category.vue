@@ -14,22 +14,22 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="category-card">
-    <div class="category-card__inner">
-      <div class="category-card__image">
-        <img class="category-card__img" :src="`/images/categories/${data.image}.png`" alt="">
-        <img class="category-card__ico" :src="`/icons/categories/${data.icon}.svg`" alt="">
+  <div class="card-category">
+    <div class="card-category__inner">
+      <div class="card-category__image">
+        <img class="card-category__img" :src="`/images/categories/${data.image}.png`" alt="">
+        <img class="card-category__ico" :src="`/icons/categories/${data.icon}.svg`" alt="">
       </div>
 
-      <div class="category-card__bottom">
-        <p class="category-card__name">{{ data.name }}</p>
+      <div class="card-category__bottom">
+        <p class="card-category__name">{{ data.name }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.category-card {
+.card-category {
   height: 100%;
   cursor: pointer;
 

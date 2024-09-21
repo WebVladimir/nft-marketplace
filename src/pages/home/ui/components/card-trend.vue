@@ -30,23 +30,23 @@ const isShowAllNfts = computed(() => props.data.nfts.length > 3)
 </script>
 
 <template>
-  <div class="trend-card">
-    <div class="trend-card__inner">
-      <div class="trend-card__items">
-        <div class="trend-card__item" v-for="(image, index) in images" :key="index">
-          <NuxtImg :src="`/trendings/${image.name}.png`" class="trend-card__item-img"/>
+  <div class="card-trend">
+    <div class="card-trend__inner">
+      <div class="card-trend__items">
+        <div class="card-trend__item" v-for="(image, index) in images" :key="index">
+          <NuxtImg :src="`/trendings/${image.name}.png`" class="card-trend__item-img"/>
         </div>
-        <NuxtLink to="/" class="trend-card__item" v-if="isShowAllNfts">
-          <div class="trend-card__item-count">{{ data.nfts.length }}+</div>
+        <NuxtLink to="/" class="card-trend__item" v-if="isShowAllNfts">
+          <div class="card-trend__item-count">{{ data.nfts.length }}+</div>
         </NuxtLink>
       </div>
-      <CreatorCard :data="data.creator"/>
+      <CardCreator :data="data.creator"/>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.trend-card {
+.card-trend {
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

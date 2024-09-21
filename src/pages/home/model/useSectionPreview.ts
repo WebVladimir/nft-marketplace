@@ -1,4 +1,4 @@
-export const usePreviewSection = () => {
+export const useSectionPreview = () => {
   const creatorCard = {
     title: 'Space Walking',
     name: 'Animakid',

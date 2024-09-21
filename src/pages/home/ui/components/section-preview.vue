@@ -1,54 +1,54 @@
 <script setup lang="ts">
-import { usePreviewSection } from "~/pages/home/model/usePreviewSection";
-const model = usePreviewSection();
+import { useSectionPreview } from "../../model/useSectionPreview";
+const model = useSectionPreview();
 </script>
 
 <template>
-  <section class="preview-section">
-    <div class="container preview-section__container">
-      <div class="preview-section__inner">
-        <div class="preview-section__column">
-          <h1 class="preview-section__title">Discover digital art & Collect NFTs</h1>
-          <p class="preview-section__description">NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.</p>
-          <div class="preview-section__card preview-section__card_desktop-hide">
-            <div class="preview-section__card-image">
-              <img src="/images/preview.png" alt="preview" class="preview-section__card-img">
+  <section class="section-preview">
+    <div class="container section-preview__container">
+      <div class="section-preview__inner">
+        <div class="section-preview__column">
+          <h1 class="section-preview__title">Discover digital art & Collect NFTs</h1>
+          <p class="section-preview__description">NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.</p>
+          <div class="section-preview__card section-preview__card_desktop-hide">
+            <div class="section-preview__card-image">
+              <img src="/images/preview.png" alt="preview" class="section-preview__card-img">
             </div>
 
-            <div class="preview-section__card-bottom">
-              <CreatorCard :data="model.creatorCard" />
+            <div class="section-preview__card-bottom">
+              <CardCreator :data="model.creatorCard" />
             </div>
           </div>
-          <Button class="preview-section__button">
+          <Button class="section-preview__button">
             <template v-slot:icon>
               <IcoRocket/>
             </template>
             Get Started
           </Button>
-          <div class="preview-section__items">
-            <div class="preview-section__item">
-              <p class="preview-section__item-count">240k+</p>
-              <p class="preview-section__item-name">Total Sale</p>
+          <div class="section-preview__items">
+            <div class="section-preview__item">
+              <p class="section-preview__item-count">240k+</p>
+              <p class="section-preview__item-name">Total Sale</p>
             </div>
-            <div class="preview-section__item">
-              <p class="preview-section__item-count">100k+</p>
-              <p class="preview-section__item-name">Auctions</p>
+            <div class="section-preview__item">
+              <p class="section-preview__item-count">100k+</p>
+              <p class="section-preview__item-name">Auctions</p>
             </div>
-            <div class="preview-section__item">
-              <p class="preview-section__item-count">240k+</p>
-              <p class="preview-section__item-name">Artists</p>
+            <div class="section-preview__item">
+              <p class="section-preview__item-count">240k+</p>
+              <p class="section-preview__item-name">Artists</p>
             </div>
           </div>
         </div>
 
-        <div class="preview-section__column preview-section__column_mobile-hide">
-          <div class="preview-section__card">
-            <div class="preview-section__card-image">
-              <img src="/images/preview.png" alt="preview" class="preview-section__card-img">
+        <div class="section-preview__column section-preview__column_mobile-hide">
+          <div class="section-preview__card">
+            <div class="section-preview__card-image">
+              <img src="/images/preview.png" alt="preview" class="section-preview__card-img">
             </div>
 
-            <div class="preview-section__card-bottom">
-              <CreatorCard :data="model.creatorCard" />
+            <div class="section-preview__card-bottom">
+              <CardCreator :data="model.creatorCard" />
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ const model = usePreviewSection();
 </template>
 
 <style scoped lang="scss">
-.preview-section {
+.section-preview {
   &__inner {
     display: flex;
     justify-content: space-between;

@@ -1,4 +1,4 @@
-export const useTrendingSection = () => {
+export const useSectionTrending = () => {
   interface Creator {
     title: string;
     name: string;

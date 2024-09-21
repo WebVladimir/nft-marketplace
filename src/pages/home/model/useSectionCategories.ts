@@ -1,4 +1,4 @@
-export const useCategoriesSection = () => {
+export const useSectionCategories = () => {
   interface Category {
     name: string;
     icon: string;

@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import PreviewSection from "~/pages/home/ui/components/preview-section.vue";
-import TrendingSection from "~/pages/home/ui/components/trending-section.vue";
-import CreatorsSection from "~/pages/home/ui/components/creators-section.vue";
-import CategoriesSection from "~/pages/home/ui/components/categories-section.vue";
+import SectionPreview from "~/pages/home/ui/components/section-preview.vue";
+import SectionTrending from "~/pages/home/ui/components/section-trending.vue";
+import SectionCreators from "~/pages/home/ui/components/section-creators.vue";
+import SectionCategories from "~/pages/home/ui/components/section-categories.vue";
+import SectionNfts from "~/pages/home/ui/components/section-nfts.vue";
 </script>
 
 <template>
   <div>
-    <PreviewSection/>
-    <TrendingSection/>
-    <CreatorsSection/>
-    <CategoriesSection/>
+    <SectionPreview/>
+    <SectionTrending/>
+    <SectionCreators/>
+    <SectionCategories/>
+    <SectionNfts/>
   </div>
 </template>

@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { useCreatorsSection } from "~/pages/home/model/useCreatorsSection";
+import { useSectionCreators } from "../../model/useSectionCreators";
 import { useDevice } from "#imports";
 import { getCountElemsOfDevice } from "~/shared/ui/utils/getCountElemsOfDevice";
-import ArtistCard from "~/shared/ui/artist-card/ui/artist-card.vue";
 
-const model = useCreatorsSection();
+const model = useSectionCreators();
 
 const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.creators)
 </script>
 
 <template>
-  <section class="creators-section">
-    <div class="container creators-section__container">
-      <div class="creators-section__inner">
+  <section class="section-creators">
+    <div class="container section-creators__container">
+      <div class="section-creators__inner">
         <HeadSection
-          class="creators-section__head"
+          class="section-creators__head"
           title="Top creators"
           description="Checkout Top Rated Creators on the NFT Marketplace"
         >
@@ -26,13 +25,13 @@ const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.creators)
           </Button>
         </HeadSection>
 
-        <div class="creators-section__items">
-          <div class="creators-section__item" v-for="creator in creators" :key="creator.id">
-            <artist-card :data="creator" :type="$device.isMobileOrTablet ? 'horizontal-big' : 'default'"/>
+        <div class="section-creators__items">
+          <div class="section-creators__item" v-for="creator in creators" :key="creator.id">
+            <CardArtist :data="creator" :type="$device.isMobileOrTablet ? 'horizontal-big' : 'default'"/>
           </div>
         </div>
 
-        <Button class="creators-section__button" size="tertiary" type="border">
+        <Button class="section-creators__button" size="tertiary" type="border">
           <template v-slot:icon>
             <IcoRocket/>
           </template>
@@ -44,7 +43,7 @@ const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.creators)
 </template>
 
 <style lang="scss">
-.creators-section {
+.section-creators {
   &__inner {
     padding: 80px 0;
 
