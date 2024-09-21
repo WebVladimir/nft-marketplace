@@ -9,7 +9,7 @@ const nfts = getCountElemsOfDevice(useDevice, 3, 2, 3, model.nfts)
 </script>
 
 <template>
-  <div class="section-nfts">
+  <section class="section-nfts">
     <div class="container section-nfts__container">
       <div class="section-nfts__inner">
         <HeadSection class="section-nfts__head" title="Discover More NFTs" description="Explore new trending NFTs">
@@ -33,7 +33,7 @@ const nfts = getCountElemsOfDevice(useDevice, 3, 2, 3, model.nfts)
         </Button>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
