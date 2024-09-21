@@ -5,7 +5,7 @@ import { getCountElemsOfDevice } from "~/shared/ui/utils/getCountElemsOfDevice";
 import { useDevice } from "#imports";
 
 const model = useSectionTrending()
-const cards = getCountElemsOfDevice(useDevice, 3, 2, 1, model.trendings)
+const cards = getCountElemsOfDevice(useDevice, 3, 2, 1, model.creators)
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const cards = getCountElemsOfDevice(useDevice, 3, 2, 1, model.trendings)
         />
         <div class="section-trending__items">
           <div class="section-trending__item" v-for="card in cards">
-            <CardTrend :data="card" />
+            <CardTrend :creator="card" />
           </div>
         </div>
       </div>

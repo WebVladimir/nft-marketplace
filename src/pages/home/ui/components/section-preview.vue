@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { useSectionPreview } from "../../model/useSectionPreview";
 const model = useSectionPreview();
+
+const creatorNft = computed(() => {
+  return model.creator?.nfts?.[0];
+})
+
+const creator = computed(() => {
+  if (model.creator) { return model.creator }
+})
 </script>
 
 <template>
@@ -12,11 +20,13 @@ const model = useSectionPreview();
           <p class="section-preview__description">NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.</p>
           <div class="section-preview__card section-preview__card_desktop-hide">
             <div class="section-preview__card-image">
-              <img src="/images/preview.png" alt="preview" class="section-preview__card-img">
+              <NuxtImg
+                :src="`/nfts/${creatorNft?.image.name}.png`"
+                class="section-preview__card-img"
+              />
             </div>
-
             <div class="section-preview__card-bottom">
-              <CardCreator :data="model.creatorCard" />
+              <CardCreator :nft-name="creatorNft?.name" :creator="creator" />
             </div>
           </div>
           <Button class="section-preview__button">
@@ -44,11 +54,13 @@ const model = useSectionPreview();
         <div class="section-preview__column section-preview__column_mobile-hide">
           <div class="section-preview__card">
             <div class="section-preview__card-image">
-              <img src="/images/preview.png" alt="preview" class="section-preview__card-img">
+              <NuxtImg
+                :src="`/nfts/${creatorNft?.image.name}.png`"
+                class="section-preview__card-img"
+              />
             </div>
-
             <div class="section-preview__card-bottom">
-              <CardCreator :data="model.creatorCard" />
+              <CardCreator :nft-name="creatorNft?.name" :creator="creator" />
             </div>
           </div>
         </div>

@@ -2,10 +2,9 @@
 import { useSectionCreators } from "../../model/useSectionCreators";
 import { useDevice } from "#imports";
 import { getCountElemsOfDevice } from "~/shared/ui/utils/getCountElemsOfDevice";
-
 const model = useSectionCreators();
 
-const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.creators)
+const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.topCreators)
 </script>
 
 <template>
@@ -26,8 +25,8 @@ const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.creators)
         </HeadSection>
 
         <div class="section-creators__items">
-          <div class="section-creators__item" v-for="creator in creators" :key="creator.id">
-            <CardArtist :data="creator" :type="$device.isMobileOrTablet ? 'horizontal-big' : 'default'"/>
+          <div class="section-creators__item" v-for="(creator, index) in creators" :key="creator.id">
+            <CardArtist :data="creator" :position="index + 1" :type="$device.isMobileOrTablet ? 'horizontal-big' : 'default'"/>
           </div>
         </div>
 

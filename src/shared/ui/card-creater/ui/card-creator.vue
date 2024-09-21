@@ -1,12 +1,15 @@
 <script setup lang="ts">
-interface Data {
-  title: string
-  avatar: string
+interface Creator {
   name: string,
+  avatar: {
+    name: string,
+    alt: string
+  },
 }
 
 interface Props {
-  data: Data,
+  creator?: Creator,
+  nftName?: string
 }
 
 defineProps<Props>()
@@ -15,12 +18,13 @@ defineProps<Props>()
 <template>
   <div class="card-creator">
     <div class="card-creator__inner">
-      <p class="card-creator__title"> {{ data.title }} </p>
+      <p class="card-creator__title">{{ nftName }}</p>
       <div class="card-creator__bottom">
         <div class="card-creator__avatar">
-          <NuxtImg :src="`/avatars/${data.avatar}.png`" />
+
+          <NuxtImg :src="`/avatars/${creator?.avatar.name}.png`" />
         </div>
-        <p class="card-creator__name">{{ data.name }}</p>
+        <p class="card-creator__name">{{ creator?.name }}</p>
       </div>
     </div>
   </div>

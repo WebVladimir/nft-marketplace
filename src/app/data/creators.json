@@ -1,0 +1,889 @@
+[
+  {
+    "name": "MrFox",
+    "id": 1,
+    "avatar": {
+      "name": "avatar-10",
+      "alt": "10"
+    },
+    "totalSales": 34.32,
+    "highestBid": 0.31,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "1"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "1"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "1"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "1"
+            }
+          },
+          {
+            "id": 5,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "1"
+            }
+          },
+          {
+            "id": 6,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "1"
+            }
+          },
+          {
+            "id": 7,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "1"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": []
+  },
+  {
+    "name": "Shroomie",
+    "id": 2,
+    "avatar": {
+      "name": "avatar-15",
+      "alt": "15"
+    },
+    "totalSales": 55.23,
+    "highestBid": 0.65,
+    "collections": [
+      {
+        "name": "Magic Mushrooms",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 5,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 6,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 7,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 8,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 8,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 10,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 11,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          },
+          {
+            "id": 12,
+            "name": "test",
+            "image": {
+              "name": "nft-6",
+              "alt": "2"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": []
+  },
+  {
+    "name": "BeKind2Robots",
+    "id": 3,
+    "avatar": {
+      "name": "avatar-6",
+      "alt": "6"
+    },
+    "totalSales": 67.53,
+    "highestBid": 4.33,
+    "collections": [
+      {
+        "name": "Disco Machines",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-7",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-7",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-7",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-7",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": []
+  },
+  {
+    "name": "Animakid",
+    "id": 4,
+    "avatar": {
+      "name": "avatar-14",
+      "alt": "14"
+    },
+    "totalSales": 43.53,
+    "highestBid": 2.23,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Keepitreal",
+    "id": 5,
+    "avatar": {
+      "name": "avatar-1",
+      "alt": "1"
+    },
+    "totalSales": 234.53,
+    "highestBid": 25.23,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "DigiLab",
+    "id": 6,
+    "avatar": {
+      "name": "avatar-2",
+      "alt": "2"
+    },
+    "totalSales": 55.33,
+    "highestBid": 2.23,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "GravityOne",
+    "id": 7,
+    "avatar": {
+      "name": "avatar-3",
+      "alt": "3"
+    },
+    "totalSales": 1.66,
+    "highestBid": 6.23,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Juanie",
+    "id": 8,
+    "avatar": {
+      "name": "avatar-4",
+      "alt": "4"
+    },
+    "totalSales": 15.66,
+    "highestBid": 2.23,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "BlueWhale",
+    "id": 9,
+    "avatar": {
+      "name": "avatar-5",
+      "alt": "5"
+    },
+    "totalSales": 2.1,
+    "highestBid": 0.13,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shroomie",
+    "id": 10,
+    "avatar": {
+      "name": "avatar-7",
+      "alt": "7"
+    },
+    "totalSales": 37.28,
+    "highestBid": 10.31,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Robotica",
+    "id": 11,
+    "avatar": {
+      "name": "avatar-8",
+      "alt": "8"
+    },
+    "totalSales": 88.56,
+    "highestBid": 44.23,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "RustyRobot",
+    "id": 12,
+    "avatar": {
+      "name": "avatar-9",
+      "alt": "9"
+    },
+    "totalSales": 633.53,
+    "highestBid": 342.23,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Dotgu",
+    "id": 13,
+    "avatar": {
+      "name": "avatar-11",
+      "alt": "11"
+    },
+    "totalSales": 9.56,
+    "highestBid": 6.23,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Ghiblier",
+    "id": 14,
+    "avatar": {
+      "name": "avatar-12",
+      "alt": "12"
+    },
+    "totalSales": 442.53,
+    "highestBid": 457.31,
+    "collections": [
+      {
+        "name": "DSGN Animals",
+        "nfts": [
+          {
+            "id": 1,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 2,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 3,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          },
+          {
+            "id": 4,
+            "name": "test",
+            "image": {
+              "name": "nft-5",
+              "alt": "3"
+            }
+          }
+        ]
+      }
+    ],
+    "nfts": [
+      {
+        "id": 4,
+        "name": "Space Walking",
+        "image": {
+          "name": "nft-4",
+          "alt": "4"
+        }
+      }
+    ]
+  }
+]

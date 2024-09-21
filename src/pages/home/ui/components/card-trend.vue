@@ -1,46 +1,45 @@
 <script setup lang="ts">
-interface Creator {
-  title: string;
-  name: string;
-  avatar: string;
-}
-
 interface Nft {
   name: string;
+  alt: string
+}
+
+interface Creator {
+  name: string;
+  avatar: string;
+  nfts: Nft[],
+  collections: any
 }
 
 interface Props {
-  data: {
-    creator: Creator;
-    nfts: Nft[];
-  }
+  creator: Creator
 }
 
 const props = defineProps<Props>()
 
-const images = computed(() => {
-  if (props.data.nfts.length > 3) {
-    return props.data.nfts.slice(0, 3);
-  } else {
-    return props.data.nfts
-  }
-})
+const nfts = computed(() => {
+  const collectionNfts = props.creator.collections[0]?.nfts || [];
+  return collectionNfts.length > 3 ? collectionNfts.slice(0, 3) : collectionNfts;
+});
 
-const isShowAllNfts = computed(() => props.data.nfts.length > 3)
+const isShowAllNfts = computed(() => {
+  const collectionNfts = props.creator.collections[0]?.nfts || [];
+  return collectionNfts.length > 3;
+});
 </script>
 
 <template>
   <div class="card-trend">
     <div class="card-trend__inner">
       <div class="card-trend__items">
-        <div class="card-trend__item" v-for="(image, index) in images" :key="index">
-          <NuxtImg :src="`/trendings/${image.name}.png`" class="card-trend__item-img"/>
+        <div class="card-trend__item" v-for="(nft, index) in nfts" :key="index">
+          <NuxtImg :src="`/nfts/${nft.image.name}.png`" class="card-trend__item-img"/>
         </div>
         <NuxtLink to="/" class="card-trend__item" v-if="isShowAllNfts">
-          <div class="card-trend__item-count">{{ data.nfts.length }}+</div>
+          <div class="card-trend__item-count">{{ props.creator.collections[0].nfts.length - 3 }}+</div>
         </NuxtLink>
       </div>
-      <CardCreator :data="data.creator"/>
+      <CardCreator :nft-name="creator.collections[0].name" :creator="creator"/>
     </div>
   </div>
 </template>

@@ -4,11 +4,14 @@ import type { Type } from '../model/typesCardArtist';
 interface Props {
   data: {
     name: string;
-    avatar: string;
+    avatar: {
+      name: string;
+    };
     totalSales: number;
     position: number
   },
   type?: Type
+  position: number
 }
 
 withDefaults(defineProps<Props>(), {
@@ -20,7 +23,7 @@ withDefaults(defineProps<Props>(), {
   <div :class="['card-artist', type]">
     <div class="card-artist__inner">
       <div class="card-artist__avatar">
-        <NuxtImg :src="`/avatars/${data.avatar}.png`" class="card-artist__avatar-img" />
+        <NuxtImg :src="`/avatars/${data.avatar.name}.png`" class="card-artist__avatar-img" />
       </div>
       <div class="card-artist__content">
         <p class="card-artist__name">{{ data.name }}</p>
@@ -31,7 +34,7 @@ withDefaults(defineProps<Props>(), {
       </div>
 
       <div class="card-artist__position">
-        <span class="card-artist__position-count">{{ data.position }}</span>
+        <span class="card-artist__position-count">{{ position }}</span>
       </div>
     </div>
   </div>

@@ -17,13 +17,7 @@ interface Props {
   nft: Nft
 }
 
-const props = defineProps<Props>()
-
-const cardCreatorContent = ref({
-  avatar: props.nft.creator.avatar,
-  title: props.nft.name,
-  name: props.nft.creator.name,
-})
+defineProps<Props>()
 </script>
 
 <template>
@@ -33,7 +27,7 @@ const cardCreatorContent = ref({
         <NuxtImg class="card-nft__img" :src="`/nfts/${nft.image.name}.png`" :alt="nft.image.alt" />
       </div>
       <div class="card-nft__bottom">
-        <CardCreator class="card-nft__creator" :data="cardCreatorContent"/>
+        <CardCreator class="card-nft__creator" :nft-name="nft.name" :creator="nft.creator"/>
         <div class="card-nft__row">
           <div class="card-nft__column">
             <p class="card-nft__caption">Price</p>

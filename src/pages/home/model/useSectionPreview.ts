@@ -1,11 +1,11 @@
+import {useStore} from "~/app/stores/global";
+
 export const useSectionPreview = () => {
-  const creatorCard = {
-    title: 'Space Walking',
-    name: 'Animakid',
-    avatar: 'avatar-14'
-  }
+  const store = useStore();
+
+  const creator = store.getCreator(4)
 
   return {
-    creatorCard
+    creator
   }
 }

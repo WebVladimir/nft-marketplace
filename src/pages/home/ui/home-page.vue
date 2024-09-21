@@ -12,6 +12,6 @@ import SectionNfts from "~/pages/home/ui/components/section-nfts.vue";
     <SectionTrending />
     <SectionCreators />
     <SectionCategories />
-    <SectionNfts />
+<!--    <SectionNfts />-->
   </div>
 </template>

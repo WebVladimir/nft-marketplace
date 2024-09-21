@@ -8,7 +8,6 @@ export const getCountElemsOfDevice = (
   arr: any[]
 ) => {
   const { isTablet, isMobile } = useDevice();
-
   const limit = isTablet ? tabletCount : isMobile ? mobileCount : desktopCount;
   return arr.slice(0, limit);
 };
