@@ -5,6 +5,7 @@ import SectionCreators from "~/pages/home/ui/components/section-creators.vue";
 import SectionCategories from "~/pages/home/ui/components/section-categories.vue";
 import SectionNfts from "~/pages/home/ui/components/section-nfts.vue";
 import SectionNftInfo from "~/pages/home/ui/components/section-nft-info.vue";
+import SectionHowWorks from "~/pages/home/ui/components/section-how-works.vue";
 </script>
 
 <template>
@@ -15,5 +16,6 @@ import SectionNftInfo from "~/pages/home/ui/components/section-nft-info.vue";
     <SectionCategories />
     <SectionNfts />
     <SectionNftInfo />
+    <SectionHowWorks />
   </div>
 </template>
