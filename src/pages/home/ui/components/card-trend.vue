@@ -11,11 +11,7 @@ interface Creator {
   collections: any
 }
 
-interface Props {
-  creator: Creator
-}
-
-const props = defineProps<Props>()
+const props = defineProps<{ creator: Creator }>()
 
 const nfts = computed(() => {
   const collectionNfts = props.creator.collections[0]?.nfts || [];

@@ -6,11 +6,7 @@ interface Data {
   to: string
 }
 
-interface Props {
-  data: Data;
-}
-
-defineProps<Props>()
+defineProps<{data: Data}>()
 </script>
 
 <template>
