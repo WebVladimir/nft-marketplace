@@ -3,7 +3,7 @@ import FormSubscribe from "~/features/form-subscribe/ui/form-subscribe.vue";
 </script>
 
 <template>
-  <div class="section-subscribe">
+  <section class="section-subscribe">
     <div class="container section-subscribe__container">
       <div class="section-subscribe__inner">
         <div class="section-subscribe__body">
@@ -18,7 +18,7 @@ import FormSubscribe from "~/features/form-subscribe/ui/form-subscribe.vue";
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">

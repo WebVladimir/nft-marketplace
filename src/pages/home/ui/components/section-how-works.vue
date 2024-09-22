@@ -5,7 +5,7 @@ const model = useSectionHowWorks()
 </script>
 
 <template>
-  <div class="section-how-works">
+  <section class="section-how-works">
     <div class="container section-how-works__container">
       <div class="section-how-works__inner">
         <HeadSection class="section-how-works__head" title="How it works" description="Find out how to get started"/>
@@ -16,7 +16,7 @@ const model = useSectionHowWorks()
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
