@@ -5,7 +5,7 @@ import { useSectionNfts } from "~/pages/home/model/useSectionNfts";
 
 const model = useSectionNfts()
 
-const nfts = getCountElemsOfDevice(useDevice, 3, 2, 3, model.nfts)
+const nfts = getCountElemsOfDevice(useDevice, 3, 2, 3, model.salesNft)
 </script>
 
 <template>
@@ -21,8 +21,8 @@ const nfts = getCountElemsOfDevice(useDevice, 3, 2, 3, model.nfts)
           </Button>
         </HeadSection>
         <div class="section-nfts__items">
-          <div class="section-nfts__item" v-for="card in nfts">
-            <CardNft :nft="card" />
+          <div class="section-nfts__item" v-for="nft in nfts">
+            <CardNft :nft="nft" />
           </div>
         </div>
         <Button class="section-nfts__button" size="tertiary" type="border">

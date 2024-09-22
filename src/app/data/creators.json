@@ -275,12 +275,15 @@
             }
           },
           {
-            "id": 4,
-            "name": "test",
+            "id": 78674,
+            "name": "AstroFiction",
             "image": {
-              "name": "nft-5",
+              "name": "nft-3",
               "alt": "3"
-            }
+            },
+            "forSale": true,
+            "price": 1.66,
+            "highestBid": 0.98
           }
         ]
       }
@@ -464,12 +467,15 @@
     ],
     "nfts": [
       {
-        "id": 4,
-        "name": "Space Walking",
+        "id": 234234,
+        "name": "Life On Edena",
         "image": {
-          "name": "nft-4",
-          "alt": "4"
-        }
+          "name": "nft-2",
+          "alt": "2"
+        },
+        "forSale": true,
+        "price": 3.13,
+        "highestBid": 1.44
       }
     ]
   },
@@ -482,45 +488,6 @@
     },
     "totalSales": 15.66,
     "highestBid": 2.23,
-    "collections": [
-      {
-        "name": "DSGN Animals",
-        "nfts": [
-          {
-            "id": 1,
-            "name": "test",
-            "image": {
-              "name": "nft-5",
-              "alt": "3"
-            }
-          },
-          {
-            "id": 2,
-            "name": "test",
-            "image": {
-              "name": "nft-5",
-              "alt": "3"
-            }
-          },
-          {
-            "id": 3,
-            "name": "test",
-            "image": {
-              "name": "nft-5",
-              "alt": "3"
-            }
-          },
-          {
-            "id": 4,
-            "name": "test",
-            "image": {
-              "name": "nft-5",
-              "alt": "3"
-            }
-          }
-        ]
-      }
-    ],
     "nfts": [
       {
         "id": 4,
@@ -759,12 +726,15 @@
     ],
     "nfts": [
       {
-        "id": 4,
-        "name": "Space Walking",
+        "id": 13413,
+        "name": "Distant Galaxy",
         "image": {
-          "name": "nft-4",
-          "alt": "4"
-        }
+          "name": "nft-1",
+          "alt": "1"
+        },
+        "forSale": true,
+        "price": 1.34,
+        "highestBid": 0.33
       }
     ]
   },

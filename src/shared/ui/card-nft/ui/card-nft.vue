@@ -10,7 +10,7 @@ interface Nft {
     name: string,
   }
   price: number,
-  highest: number,
+  highestBid: number,
 }
 
 interface Props {
@@ -35,7 +35,7 @@ defineProps<Props>()
           </div>
           <div class="card-nft__column">
             <p class="card-nft__caption">Highest Bid</p>
-            <p class="card-nft__value">{{ nft.highest }} wETH</p>
+            <p class="card-nft__value">{{ nft.highestBid }} wETH</p>
           </div>
         </div>
       </div>
