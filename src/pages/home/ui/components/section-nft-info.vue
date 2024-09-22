@@ -11,14 +11,8 @@ const saleNft = model.NftWithShares[0].actions[0]
 const img = useImage()
 
 const backgroundStyles = computed(() => {
-
-
   const imgUrl = img(`/nfts/${saleNft.nft.image.name}.png`)
   return { backgroundImage: `url('${imgUrl}')` }
-})
-
-onMounted(() => {
-  console.log(saleNft)
 })
 
 function actionEndedTimer() {
