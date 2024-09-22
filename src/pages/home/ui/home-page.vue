@@ -6,6 +6,7 @@ import SectionCategories from "~/pages/home/ui/components/section-categories.vue
 import SectionNfts from "~/pages/home/ui/components/section-nfts.vue";
 import SectionNftInfo from "~/pages/home/ui/components/section-nft-info.vue";
 import SectionHowWorks from "~/pages/home/ui/components/section-how-works.vue";
+import SectionSubscribe from "~/pages/home/ui/components/section-subscribe.vue";
 </script>
 
 <template>
@@ -17,5 +18,6 @@ import SectionHowWorks from "~/pages/home/ui/components/section-how-works.vue";
     <SectionNfts />
     <SectionNftInfo />
     <SectionHowWorks />
+    <SectionSubscribe />
   </div>
 </template>
