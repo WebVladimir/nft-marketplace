@@ -606,6 +606,20 @@
         ]
       }
     ],
+    "actions": [
+      {
+        "sale": 30,
+        "minutes": 1000,
+        "nft": {
+          "id": 4,
+          "name": "Magic Mashrooms",
+          "image": {
+            "name": "nft-8",
+            "alt": "8"
+          }
+        }
+      }
+    ],
     "nfts": [
       {
         "id": 4,

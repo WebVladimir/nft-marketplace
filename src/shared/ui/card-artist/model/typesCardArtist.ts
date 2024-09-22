@@ -1,1 +1,1 @@
-export type Type = 'default' | 'horizontal-big' | 'horizontal-medium' | 'horizontal-small'
+export type Type = 'default' | 'horizontal-big' | 'horizontal-medium' | 'horizontal-small' | 'horizontal-mini'

@@ -45,6 +45,12 @@ withDefaults(defineProps<Props>(), {
   --color-secondary: #{$color-white-100};
 }
 
+.white {
+  --color-main: #{$color-white-100};
+  --color-secondary: #{$call-to-action};
+  --color-text: #{$color-black-100};
+}
+
 //Main
 .button {
   display: inline-block;
@@ -145,6 +151,15 @@ withDefaults(defineProps<Props>(), {
       svg {
         color: var(--color-main, #fff);
       }
+    }
+  }
+}
+
+//color
+.button {
+  &.white {
+    .button__text {
+      color: var(--color-text, $color-black-100);
     }
   }
 }

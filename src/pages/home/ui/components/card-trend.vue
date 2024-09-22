@@ -36,7 +36,7 @@ const isShowAllNfts = computed(() => {
           <NuxtImg :src="`/nfts/${nft.image.name}.png`" class="card-trend__item-img"/>
         </div>
         <NuxtLink to="/" class="card-trend__item" v-if="isShowAllNfts">
-          <div class="card-trend__item-count">{{ props.creator.collections[0].nfts.length - 3 }}+</div>
+          <div class="card-trend__item-count">+{{ props.creator.collections[0].nfts.length - 2 }}</div>
         </NuxtLink>
       </div>
       <CardCreator :nft-name="creator.collections[0].name" :creator="creator"/>

@@ -11,7 +11,7 @@ interface Props {
     position: number
   },
   type?: Type
-  position: number
+  position?: number
 }
 
 withDefaults(defineProps<Props>(), {
@@ -193,6 +193,36 @@ withDefaults(defineProps<Props>(), {
     .card-artist__inner {
       display: flex;
       align-items: center;
+    }
+
+    .card-artist__row {
+      display: none;
+    }
+
+    .card-artist__name {
+      @include w-base;
+      margin: 0;
+      line-height: 110%;
+    }
+  }
+
+  &.horizontal-mini {
+    display: inline-block;
+
+    .card-artist__avatar {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+
+    .card-artist__position {
+      display: none;
+    }
+
+    .card-artist__inner {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
     }
 
     .card-artist__row {

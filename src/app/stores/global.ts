@@ -22,6 +22,7 @@ interface Creator {
   },
   totalSales: number,
   highestBid: number,
+  actions?: any
   collections?: Collection[]
   nfts?: Nft[]
 }
@@ -77,6 +78,23 @@ export const useStore = defineStore('main', {
       });
 
       return newArr;
+    },
+    getSalesNfts: (state) => {
+      let newArr: any = [];
+
+      state.creators.forEach((creator) => {
+
+        if (creator.actions) {
+          const creatorInfo = {
+            name: creator.name,
+            avatar: creator.avatar,
+          };
+
+          newArr.push({creatorInfo, actions: creator.actions});
+        }
+      })
+
+      return newArr
     }
   },
   actions: {

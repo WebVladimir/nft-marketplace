@@ -80,7 +80,11 @@ const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.topCreators)
 
   &__item {
     padding: 15px;
-    flex: 0 1 25%;
+    flex: 1 1 25%;
+
+    &:last-child {
+      flex-grow: 0;
+    }
 
     @include tablet {
       flex-basis: 50%;
