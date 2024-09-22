@@ -62,7 +62,12 @@ const model = useTimer(props, emits)
 
   &__items {
     display: flex;
-    gap: 10px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
   }
 
   &__title {

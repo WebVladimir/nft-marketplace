@@ -89,6 +89,12 @@ function actionEndedTimer() {
     }
   }
 
+  &__column {
+    @include mobile {
+      width: 100%;
+    }
+  }
+
   &__timer {
     @include mobile {
       margin-bottom: 30px;
