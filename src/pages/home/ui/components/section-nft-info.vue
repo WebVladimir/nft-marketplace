@@ -1,4 +1,6 @@
 <script setup lang="ts">
+//Требуется рефатор
+
 import { useSectionNftInfo } from "../../model/useSectionNftInfo";
 
 const model = useSectionNftInfo()
@@ -76,6 +78,10 @@ function actionEndedTimer() {
     position: relative;
     padding: 360px 0 60px 0;
     z-index: 2;
+
+    @include mobile {
+      padding: 120px 0 40px 0;
+    }
   }
 
   &__row {
