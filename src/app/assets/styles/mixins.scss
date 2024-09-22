@@ -7,6 +7,12 @@
   }
 }
 
+@mixin desktop-max-width() {
+  @media (max-width: $desktop-max-width) {
+    @content
+  }
+}
+
 @mixin tablet() {
   @media (max-width: $tablet-width) {
     @content

@@ -78,6 +78,10 @@ withDefaults(defineProps<Props>(), {
       &_50 {
         padding: 0 50px;
       }
+
+      @include mobile {
+        padding: 0 20px;
+      }
     }
   }
 
