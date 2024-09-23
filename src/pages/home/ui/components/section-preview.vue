@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { useSectionPreview } from "../../model/useSectionPreview";
+import type {Nft} from "~/shared/model/typesCreator";
 const model = useSectionPreview();
 
-const creatorNft = computed(() => {
+const creatorNft = computed<Nft | undefined>(() => {
   return model.creator?.nfts?.[0];
-})
-
-const creator = computed(() => {
-  if (model.creator) { return model.creator }
 })
 </script>
 
@@ -21,12 +18,12 @@ const creator = computed(() => {
           <div class="section-preview__card section-preview__card_desktop-hide">
             <div class="section-preview__card-image">
               <NuxtImg
-                :src="`/nfts/${creatorNft?.image.name}.png`"
+                :src="`/nfts/${creatorNft.image.name}.png`"
                 class="section-preview__card-img"
               />
             </div>
             <div class="section-preview__card-bottom">
-              <CardCreator :nft-name="creatorNft?.name" :creator="creator" />
+              <CreatorMin :nft-name="creatorNft?.name" :creator="model.creator" />
             </div>
           </div>
           <Button class="section-preview__button">
@@ -60,7 +57,7 @@ const creator = computed(() => {
               />
             </div>
             <div class="section-preview__card-bottom">
-              <CardCreator :nft-name="creatorNft?.name" :creator="creator" />
+              <CreatorMin :nft-name="creatorNft?.name" :creator="model.creator" />
             </div>
           </div>
         </div>

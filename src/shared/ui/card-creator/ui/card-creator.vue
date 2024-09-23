@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import type { Type } from '../model/typesCardArtist';
+import type {Creator} from "~/shared/model/typesCreator";
+import type { Type } from "../model/typesCardCreator"
 
 interface Props {
-  data: {
-    name: string;
-    avatar: {
-      name: string;
-    };
-    totalSales: number;
-    position: number
-  },
+  creator: Creator
   type?: Type
   position?: number
 }
@@ -20,28 +14,28 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['card-artist', type]">
-    <div class="card-artist__inner">
-      <div class="card-artist__avatar">
-        <NuxtImg :src="`/avatars/${data.avatar.name}.png`" class="card-artist__avatar-img" />
+  <div :class="['card-creator', type]">
+    <div class="card-creator__inner">
+      <div class="card-creator__avatar">
+        <NuxtImg :src="`/avatars/${creator.avatar.name}.png`" class="card-creator__avatar-img" />
       </div>
-      <div class="card-artist__content">
-        <p class="card-artist__name">{{ data.name }}</p>
-        <div class="card-artist__row">
-          <p class="card-artist__description">Total Sales:</p>
-          <p class="card-artist__sales">{{ data.totalSales }} ETH</p>
+      <div class="card-creator__content">
+        <p class="card-creator__name">{{ creator.name }}</p>
+        <div class="card-creator__row">
+          <p class="card-creator__description">Total Sales:</p>
+          <p class="card-creator__sales">{{ creator.totalSales }} ETH</p>
         </div>
       </div>
 
-      <div class="card-artist__position">
-        <span class="card-artist__position-count">{{ position }}</span>
+      <div class="card-creator__position">
+        <span class="card-creator__position-count">{{ position }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.card-artist {
+.card-creator {
   cursor: pointer;
 
   &__inner {
@@ -103,103 +97,103 @@ withDefaults(defineProps<Props>(), {
   }
 
   &.default {
-    .card-artist__avatar {
+    .card-creator__avatar {
       width: 120px;
       height: 120px;
       margin: 0 auto 20px auto;
       aspect-ratio: 1 / 1;
     }
 
-    .card-artist__content {
+    .card-creator__content {
       align-items: center;
     }
 
-    .card-artist__row {
+    .card-creator__row {
       justify-content: center;
     }
 
-    .card-artist__position {
+    .card-creator__position {
       left: 20px;
       top: 20px;
     }
 
-    .card-artist__name {
+    .card-creator__name {
       margin-bottom: 5px;
     }
   }
 
   &.horizontal-big {
-    .card-artist__avatar {
+    .card-creator__avatar {
       width: 60px;
       height: 60px;
       margin-right: 20px;
     }
 
-    .card-artist__inner {
+    .card-creator__inner {
       display: flex;
       align-items: center;
     }
 
-    .card-artist__position {
+    .card-creator__position {
       left: 13px;
       top: 13px;
     }
 
-    .card-artist__description {
+    .card-creator__description {
       line-height: 110%;
     }
 
-    .card-artist__name {
+    .card-creator__name {
       margin-bottom: 5px;
     }
   }
 
   &.horizontal-medium {
-    .card-artist__avatar {
+    .card-creator__avatar {
       width: 24px;
       height: 24px;
       margin-right: 12px;
     }
 
-    .card-artist__position {
+    .card-creator__position {
       display: none;
     }
 
-    .card-artist__inner {
+    .card-creator__inner {
       display: flex;
       align-items: center;
     }
 
-    .card-artist__row {
+    .card-creator__row {
       display: none;
     }
 
-    .card-artist__name {
+    .card-creator__name {
       margin: 0;
     }
   }
 
   &.horizontal-small {
-    .card-artist__avatar {
+    .card-creator__avatar {
       width: 24px;
       height: 24px;
       margin-right: 12px;
     }
 
-    .card-artist__position {
+    .card-creator__position {
       display: none;
     }
 
-    .card-artist__inner {
+    .card-creator__inner {
       display: flex;
       align-items: center;
     }
 
-    .card-artist__row {
+    .card-creator__row {
       display: none;
     }
 
-    .card-artist__name {
+    .card-creator__name {
       @include w-base;
       margin: 0;
       line-height: 110%;
@@ -209,27 +203,27 @@ withDefaults(defineProps<Props>(), {
   &.horizontal-mini {
     display: inline-block;
 
-    .card-artist__avatar {
+    .card-creator__avatar {
       width: 24px;
       height: 24px;
       margin-right: 12px;
     }
 
-    .card-artist__position {
+    .card-creator__position {
       display: none;
     }
 
-    .card-artist__inner {
+    .card-creator__inner {
       display: flex;
       align-items: center;
       padding: 10px 20px;
     }
 
-    .card-artist__row {
+    .card-creator__row {
       display: none;
     }
 
-    .card-artist__name {
+    .card-creator__name {
       @include w-base;
       margin: 0;
       line-height: 110%;

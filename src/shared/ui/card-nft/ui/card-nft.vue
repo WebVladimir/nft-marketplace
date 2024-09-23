@@ -1,33 +1,17 @@
 <script setup lang="ts">
-interface Nft {
-  name: string,
-  image: {
-    name: string,
-    alt: string,
-  }
-  creator: {
-    avatar: string,
-    name: string,
-  }
-  price: number,
-  highestBid: number,
-}
+import type {Creator, Nft} from '~/shared/model/typesCreator';
 
-interface Props {
-  nft: Nft
-}
-
-defineProps<Props>()
+defineProps<{nft: Nft, creator: Creator}>()
 </script>
 
 <template>
   <div class="card-nft">
     <div class="card-nft__inner">
       <div class="card-nft__image">
-        <NuxtImg class="card-nft__img" :src="`/nfts/${nft.image.name}.png`" :alt="nft.image.alt" />
+        <NuxtImg class="card-nft__img" :src="`/nfts/${nft.image?.name}.png`" :alt="nft.image?.alt" />
       </div>
       <div class="card-nft__bottom">
-        <CardCreator class="card-nft__creator" :nft-name="nft.name" :creator="nft.creator"/>
+        <CreatorMin class="card-nft__creator" :nft-name="nft.name" :creator="creator"/>
         <div class="card-nft__row">
           <div class="card-nft__column">
             <p class="card-nft__caption">Price</p>

@@ -22,7 +22,7 @@ const nfts = getCountElemsOfDevice(useDevice, 3, 2, 3, model.salesNft)
         </HeadSection>
         <div class="section-nfts__items">
           <div class="section-nfts__item" v-for="nft in nfts">
-            <CardNft :nft="nft" />
+            <CardNft :nft="nft" :creator="nft.creator" />
           </div>
         </div>
         <Button class="section-nfts__button" size="tertiary" type="border">

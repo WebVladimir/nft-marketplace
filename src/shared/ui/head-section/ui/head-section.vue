@@ -1,10 +1,7 @@
 <script setup lang="ts">
-interface Props {
-  title?: string,
-  description?: string,
-}
+import type { HeadSection } from '../model/typesHeadSection'
 
-defineProps<Props>()
+defineProps<HeadSection>()
 </script>
 
 <template>

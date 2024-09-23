@@ -26,7 +26,7 @@ function actionEndedTimer() {
       <div class="section-nft-info__inner">
         <div class="section-nft-info__row">
           <div class="section-nft-info__column">
-            <CardArtist class="section-nft-info__creator" type="horizontal-mini" :data="creatorSales.creatorInfo" />
+            <CardCreator class="section-nft-info__creator" type="horizontal-mini" :creator="creatorSales.creatorInfo" />
             <p class="section-nft-info__name">Magic Mashrooms</p>
             <Button size="secondary" color="white" class="section-nft-info__button">
               <template v-slot:icon>
@@ -36,7 +36,7 @@ function actionEndedTimer() {
             </Button>
           </div>
           <div class="section-nft-info__column">
-            <Timer class="section-nft-info__timer" :minutes="saleNft.minutes" @ended="actionEndedTimer"/>
+            <Timer class="section-nft-info__timer" :minutes="40" @ended="actionEndedTimer"/>
             <Button size="secondary" color="white" class="section-nft-info__button section-nft-info__button_desktop-hide">
               <template v-slot:icon>
                 <IcoEye/>

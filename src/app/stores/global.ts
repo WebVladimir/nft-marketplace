@@ -1,39 +1,10 @@
-interface Nft {
-  id: number,
-  name: string,
-  image: {
-    name: string,
-    alt: string,
-  },
-  forSale?: boolean,
-}
-
-interface Collection {
-  name: string,
-  nfts: Nft[]
-}
-
-interface Creator {
-  id?: number,
-  name?: string,
-  avatar?: {
-    name?: string,
-    alt?: string,
-  },
-  totalSales: number,
-  highestBid: number,
-  actions?: any
-  collections?: Collection[]
-  nfts?: Nft[]
-}
+import type { Creator } from "~/shared/model/typesCreator";
 
 import creators from '../data/creators.json';
 
-const typedCreators: Creator[] = creators;
-
 export const useStore = defineStore('main', {
   state: () => ({
-    creators: typedCreators
+    creators: creators
   }),
 
   getters: {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useTimer} from "../model/useTimer";
+import { useTimer } from "../model/useTimer";
 import formatTime from "./utils/formatTime";
 
 const props = defineProps<{

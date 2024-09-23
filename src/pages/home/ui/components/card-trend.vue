@@ -1,15 +1,5 @@
 <script setup lang="ts">
-interface Nft {
-  name: string;
-  alt: string
-}
-
-interface Creator {
-  name: string;
-  avatar: string;
-  nfts: Nft[],
-  collections: any
-}
+import type { Creator } from "~/shared/model/typesCreator";
 
 const props = defineProps<{ creator: Creator }>()
 
@@ -35,7 +25,7 @@ const isShowAllNfts = computed(() => {
           <div class="card-trend__item-count">+{{ props.creator.collections[0].nfts.length - 2 }}</div>
         </NuxtLink>
       </div>
-      <CardCreator :nft-name="creator.collections[0].name" :creator="creator"/>
+      <CreatorMin :nft-name="creator.collections[0].name" :creator="creator"/>
     </div>
   </div>
 </template>

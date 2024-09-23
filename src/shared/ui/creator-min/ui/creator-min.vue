@@ -1,37 +1,31 @@
 <script setup lang="ts">
-interface Creator {
-  name: string,
-  avatar: {
-    name: string,
-    alt: string
-  },
-}
+import type { Creator } from "~/shared/model/typesCreator";
 
 interface Props {
-  creator?: Creator,
-  nftName?: string
+  creator: Creator,
+  nftName: string
 }
 
 defineProps<Props>()
 </script>
 
 <template>
-  <div class="card-creator">
-    <div class="card-creator__inner">
-      <p class="card-creator__title">{{ nftName }}</p>
-      <div class="card-creator__bottom">
-        <div class="card-creator__avatar">
+  <div class="creator-min">
+    <div class="creator-min__inner">
+      <p class="creator-min__title">{{ nftName }}</p>
+      <div class="creator-min__bottom">
+        <div class="creator-min__avatar">
 
-          <NuxtImg :src="`/avatars/${creator?.avatar.name}.png`" />
+          <NuxtImg :src="`/avatars/${creator.avatar?.name}.png`" />
         </div>
-        <p class="card-creator__name">{{ creator?.name }}</p>
+        <p class="creator-min__name">{{ creator.name }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.card-creator {
+.creator-min {
   &__bottom {
     display: flex;
   }

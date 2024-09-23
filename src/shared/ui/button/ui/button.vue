@@ -1,20 +1,7 @@
 <script setup lang="ts">
-import type {
-  ButtonTypeType,
-  ButtonSizeType,
-  ButtonPaddingType,
-  ButtonColorType
-} from "../model/typesButton";
+import type { ButtonProps } from '../../button/model/typesButton'
 
-interface Props {
-  size?: ButtonSizeType
-  type?: ButtonTypeType
-  padding?: ButtonPaddingType
-  color?: ButtonColorType
-  link?: boolean,
-  reverse?: boolean,
-}
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<ButtonProps>(), {
   size: 'primary',
   type: 'fill',
   link: false,

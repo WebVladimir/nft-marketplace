@@ -1,14 +1,7 @@
 <script setup lang="ts">
-interface Data {
-  title: string
-  description: string
-  image: {
-    src: string,
-    alt: string,
-  }
-}
+import type { CardContent } from "../model/typesCardWork";
 
-defineProps<{data: Data}>()
+defineProps<{data: CardContent}>()
 </script>
 
 <template>

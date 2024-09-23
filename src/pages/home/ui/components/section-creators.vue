@@ -26,7 +26,7 @@ const creators = getCountElemsOfDevice(useDevice, 12, 6, 5, model.topCreators)
 
         <div class="section-creators__items">
           <div class="section-creators__item" v-for="(creator, index) in creators" :key="creator.id">
-            <CardArtist :data="creator" :position="index + 1" :type="$device.isMobileOrTablet ? 'horizontal-big' : 'default'"/>
+            <CardCreator :creator="creator" :position="index + 1" :type="$device.isMobileOrTablet ? 'horizontal-big' : 'default'"/>
           </div>
         </div>
 
