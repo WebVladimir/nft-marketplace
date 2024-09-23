@@ -1,6 +1,4 @@
-# Nuxt 3 NFT FSD Project
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Nuxt 3 NFT-Marketplace FSD
 
 ## Setup
 
@@ -37,6 +35,25 @@ yarn dev
 # bun
 bun run dev
 ```
+
+## Histoire
+
+Start the development server
+
+```bash
+# npm
+npm run story:dev
+
+# pnpm
+pnpm run story:dev
+
+# yarn
+yarn story:dev
+
+# bun
+bun run story:dev
+```
+
 
 ## Production
 

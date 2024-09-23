@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "nft-marketplace",
   "private": true,
   "type": "module",
   "scripts": {
@@ -7,7 +7,10 @@
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "story:dev": "histoire dev",
+    "story:build": "histoire build",
+    "story:preview": "histoire preview"
   },
   "dependencies": {
     "@nuxt/image": "^1.8.0",
@@ -20,6 +23,9 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@histoire/plugin-nuxt": "^0.17.17",
+    "@histoire/plugin-vue": "^0.17.17",
+    "histoire": "^0.17.17",
     "sass": "^1.78.0"
   },
   "volta": {

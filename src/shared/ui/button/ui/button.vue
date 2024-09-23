@@ -69,6 +69,10 @@ withDefaults(defineProps<Props>(), {
 
     &_reverse {
       flex-direction: row-reverse;
+
+      .button__ico {
+        margin: 0 0 0 12px;
+      }
     }
 
     &_padding {
