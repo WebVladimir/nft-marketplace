@@ -17,7 +17,7 @@ withDefaults(defineProps<Props>(), {
   <div :class="['card-creator', type]">
     <div class="card-creator__inner">
       <div class="card-creator__avatar">
-        <NuxtImg :src="`/avatars/${creator.avatar.name}.png`" class="card-creator__avatar-img" />
+        <NuxtImg :src="`/avatars/${creator.avatar?.name}.png`" class="card-creator__avatar-img" />
       </div>
       <div class="card-creator__content">
         <p class="card-creator__name">{{ creator.name }}</p>

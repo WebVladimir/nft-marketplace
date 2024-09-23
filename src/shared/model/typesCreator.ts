@@ -28,7 +28,7 @@ export interface Action {
 }
 
 export interface Creator {
-  id?: string,
+  id?: number,
   name?: string,
   avatar?: Avatar,
   totalSales?: number,
