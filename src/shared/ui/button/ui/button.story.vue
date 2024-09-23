@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {HstCheckbox, HstSelect} from "@histoire/controls";
-
 interface ButtonProps {
   type?: string,
   size?: string,
