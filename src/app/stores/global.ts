@@ -1,4 +1,4 @@
-import type { Creator } from "~/shared/model/typesCreator";
+import type {Creator, Nft} from "~/shared/model/typesCreator";
 
 import creators from '../data/creators.json';
 
@@ -29,7 +29,7 @@ export const useStore = defineStore('main', {
 
         if (creator.collections) {
           creator.collections.forEach((collection) => {
-            const filteredNfts = collection.nfts.filter(nft => nft.forSale === true);
+            const filteredNfts = collection.nfts.filter((nft: Nft) => nft.forSale === true);
             const transformedNfts = filteredNfts.map(nft => ({
               ...nft,
               creator: creatorInfo,
@@ -39,7 +39,7 @@ export const useStore = defineStore('main', {
         }
 
         if (creator.nfts) {
-          const filteredNfts = creator.nfts.filter(nft => nft.forSale === true);
+          const filteredNfts = creator.nfts.filter((nft: Nft) => nft.forSale === true);
           const transformedNfts = filteredNfts.map(nft => ({
             ...nft,
             creator: creatorInfo,
