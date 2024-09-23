@@ -1,9 +1,9 @@
-import { useStore } from "~/app/stores/global";
+import { useNftStore } from "~/app/stores/useNftStore";
 
 export const useSectionNfts = () => {
-  const store = useStore()
+  const store = useNftStore()
 
-  const salesNft = store.getSellableNft;
+  const salesNft = store.getSelesNft;
 
   return {
     salesNft

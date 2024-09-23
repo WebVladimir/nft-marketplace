@@ -10,6 +10,17 @@ export interface Nft {
   highestBid?: number,
 }
 
+export interface SaleNft {
+  creatorInfo: CreatorInfo;
+  actions: Action[];
+}
+
+export interface CreatorInfo {
+  name?: string;
+  avatar?: Avatar;
+}
+
+
 export interface Avatar {
   name?: string,
   alt?: string,
@@ -18,7 +29,7 @@ export interface Avatar {
 export interface Collection {
   id?: number,
   name?: string
-  nfts?: Nft[],
+  nfts: Nft[],
 }
 
 export interface Action {
@@ -31,7 +42,7 @@ export interface Creator {
   id?: number,
   name?: string,
   avatar?: Avatar,
-  totalSales?: number,
+  totalSales: number,
   highestBid?: number,
   collections?: Collection[],
   actions?: Action[],

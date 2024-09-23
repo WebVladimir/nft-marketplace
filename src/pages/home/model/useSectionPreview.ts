@@ -1,9 +1,9 @@
-import {useStore} from "~/app/stores/global";
+import { useCreatorsStore } from "~/app/stores/useCreatorsStore";
 
 export const useSectionPreview = () => {
-  const store = useStore();
+  const store = useCreatorsStore();
 
-  const creator = store.getCreator(4)
+  const creator = store.getCreatorById(4)
 
   return {
     creator

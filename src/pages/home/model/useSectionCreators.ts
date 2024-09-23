@@ -1,7 +1,7 @@
-import {useStore} from "~/app/stores/global";
+import { useCreatorsStore } from "~/app/stores/useCreatorsStore";
 
 export const useSectionCreators = () => {
-  const store = useStore();
+  const store = useCreatorsStore();
 
   const topCreators = store.getTopByTotalSales
 

@@ -1,7 +1,7 @@
-import {useStore} from "~/app/stores/global";
+import { useCreatorsStore } from "~/app/stores/useCreatorsStore";
 
 export const useSectionTrending = () => {
-  const store = useStore()
+  const store = useCreatorsStore()
 
   const creators = store.getCreators
 
