@@ -1,8 +1,15 @@
 <script setup lang="ts">
+import {useRouter} from "#imports";
+
+const router = useRouter();
+
 import { useHeader } from "~/widgets/header/model/useHeader";
 const model = useHeader()
 
 const isOpen = ref(false)
+const isShowButtonSingUp = computed(() => {
+  return router.currentRoute.value.name !== 'sign-up'
+})
 
 function openMenu() {
   isOpen.value = !isOpen.value
@@ -35,12 +42,14 @@ function hideMenu() {
             </nuxt-link>
           </nav>
 
-          <Button class="header__button" size="secondary" :padding="30">
-            <template v-slot:icon>
-              <icoUser />
-            </template>
-            Sign Up
-          </Button>
+          <NuxtLink to="/sign-up" class="header__button" v-if="isShowButtonSingUp">
+            <Button size="secondary" :padding="30">
+              <template v-slot:icon>
+                <icoUser />
+              </template>
+              Sign Up
+            </Button>
+          </NuxtLink>
         </div>
 
         <div :class="['header__burger', {'header__burger_active': isOpen}]" @click="openMenu">

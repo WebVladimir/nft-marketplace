@@ -12,6 +12,7 @@ const state = reactive({
         <IcoRocket/>
         <IcoMail/>
         <IcoUser/>
+        <IcoLock/>
       </div>
 
       <template #controls>

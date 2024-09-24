@@ -43,6 +43,8 @@ const model = useFooter()
 
 <style lang="scss">
 .footer {
+  background: $color-black-100;
+
   &__inner {
     padding: 40px 0;
   }
