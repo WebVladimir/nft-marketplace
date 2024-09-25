@@ -24,7 +24,7 @@ export const useFooter = () => {
     },
     {
       name: 'Connect a wallet',
-      to: '/'
+      to: '/connect-wallet',
     }
   ]
 

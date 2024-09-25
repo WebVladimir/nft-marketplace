@@ -15,7 +15,7 @@ export function useHeader () {
     },
     {
       label: 'Connect a wallet',
-      to: '',
+      to: '/connect-wallet',
     },
   ]
 

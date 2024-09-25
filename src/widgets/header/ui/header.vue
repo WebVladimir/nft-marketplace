@@ -37,6 +37,7 @@ function hideMenu() {
               v-for="(link, index) in model.menuLinks"
               :key="index"
               @click="hideMenu"
+              :to="link.to"
             >
               {{ link.label }}
             </nuxt-link>
@@ -64,14 +65,18 @@ function hideMenu() {
 
 <style scoped lang="scss">
 .header {
+
+
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
+    min-height: 100px;
 
     @include tablet {
       padding: 15px 0;
+      min-height: 54px;
     }
   }
 
@@ -141,6 +146,7 @@ function hideMenu() {
     color: $color-white-100;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
 
     &:after {
       content: '';

@@ -1,22 +1,28 @@
+<script setup lang="ts">
+defineProps(['modelValue'])
+defineEmits(['update:modelValue'])
+</script>
+
 <template>
-  <div class="input">
-    <div class="input__inner">
-      <div class="input__ico">
+  <div class="app-input">
+    <div class="app-input__inner">
+      <div class="app-input__ico">
         <slot></slot>
       </div>
-      <input type="text" class="input__field">
+      <input
+        type="text"
+        class="app-input__field"
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)">
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.input {
+.app-input {
   &__inner {
     position: relative;
     display: flex;
-
-
-
   }
 
   &__ico {
@@ -37,10 +43,6 @@
     border: 1px solid $color-white-200;
     background: $color-white-100;
     width: 100%;
-
-    &::placeholder {
-
-    }
   }
 }
 </style>
