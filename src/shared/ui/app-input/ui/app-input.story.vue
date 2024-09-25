@@ -1,11 +1,11 @@
 <template>
   <Story title="Shared/input">
     <Variant title="default">
-      <Input>
+      <AppInput>
         <template v-slot:default>
           <IcoUser/>
         </template>
-      </Input>
+      </AppInput>
     </Variant>
   </Story>
 </template>
