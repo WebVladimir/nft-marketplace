@@ -43,7 +43,7 @@ function hideMenu() {
             </nuxt-link>
           </nav>
 
-          <NuxtLink to="/sign-up" class="header__button" v-if="isShowButtonSingUp">
+          <NuxtLink to="/sign-up" class="header__button" v-if="isShowButtonSingUp" @click="hideMenu">
             <Button size="secondary" :padding="30">
               <template v-slot:icon>
                 <icoUser />
@@ -147,6 +147,7 @@ function hideMenu() {
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
+    transition: color .3s ease-in-out;
 
     &:after {
       content: '';
@@ -160,10 +161,6 @@ function hideMenu() {
       background: $call-to-action;
       opacity: 0;
       transition: opacity .2s ease-in-out;
-    }
-
-    &:hover:after {
-      opacity: 1;
     }
 
     &:not(:last-child) {
@@ -225,6 +222,16 @@ function hideMenu() {
       width: 14px;
       bottom: 4px;
     }
+  }
+}
+
+.header__link.router-link-active {
+  color: $call-to-action;
+}
+
+.header__link:not(.router-link-active) {
+  &:hover:after {
+    opacity: 1;
   }
 }
 </style>
