@@ -1,43 +1,20 @@
 <script setup lang="ts">
-import { useTimer } from "../model/useTimer";
-import formatTime from "./utils/formatTime";
+interface Props {
+  caption?: string
+}
 
-const props = defineProps<{
-  minutes: number;
-}>();
-
-const emits = defineEmits<{
-  ended: any
-}>()
-
-const model = useTimer(props, emits)
+defineProps<Props>()
 </script>
 
 <template>
   <div class="timer">
     <div class="timer__inner">
       <div class="timer__main">
-        <p class="timer__title">Auction ends in:</p>
+        <div class="timer__caption" v-if="$slots.caption">
+          <slot name="caption" />
+        </div>
         <div class="timer__items">
-          <div class="timer__item">
-            <p class="timer__value">{{ formatTime(model.hours.value) }}</p>
-            <p class="timer__description">Hours</p>
-          </div>
-          <div class="timer__item">
-            <p class="timer__value">:</p>
-          </div>
-          <div class="timer__item">
-            <p class="timer__value">{{ formatTime(model.minutes.value) }}</p>
-            <p class="timer__description">Minutes</p>
-          </div>
-          <div class="timer__item">
-            <p class="timer__value">:</p>
-
-          </div>
-          <div class="timer__item">
-            <p class="timer__value">{{ formatTime(model.seconds.value) }}</p>
-            <p class="timer__description">Seconds</p>
-          </div>
+          <slot name="items" />
         </div>
       </div>
       <div class="timer__bottom" v-if="$slots.default">
@@ -62,15 +39,57 @@ const model = useTimer(props, emits)
 
   &__items {
     display: flex;
+
+    > * {
+      position: relative;
+
+      &:after {
+        content: ':';
+        position: absolute;
+        right: -22px;
+        top: 50%;
+        transform: translateY(calc(-50% - 12px));
+        @include s-h3;
+        color: $color-white-100;
+        margin-bottom: 5px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    * > :nth-child(1) {
+      @include s-h3;
+      color: $color-white-100;
+      margin-bottom: 5px;
+    }
+
+    * > :nth-child(2) {
+      @include s-caption;
+      color: $color-white-100;
+    }
+
+    .not-dot {
+      &:after {
+        display: none;
+      }
+    }
   }
 
   &__item {
     &:not(:last-child) {
-      margin-right: 10px;
+      margin-right: 20px;
     }
   }
 
-  &__title {
+  &__caption {
     @include s-caption;
     color: $color-white-100;
     margin-bottom: 10px;

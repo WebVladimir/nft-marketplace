@@ -1,23 +1,20 @@
 <script setup lang="ts">
-//Требуется рефатор
-
 import { useSectionNftInfo } from "../../model/useSectionNftInfo";
+import type { SaleNftSection } from "~/shared/model/typesCreator";
+import ActionTimer from "~/features/action-taimer/ui/action-timer.vue";
 
 const model = useSectionNftInfo()
 
+const isoTime = '2024-10-29T09:16:00'
+
 const creatorSales = model.NftWithShares[0]
-const saleNft = model.NftWithShares[0].actions[0]
+const saleNft: SaleNftSection = model.NftWithShares[0].actions[0]
 
 const img = useImage()
-
 const backgroundStyles = computed(() => {
-  const imgUrl = img(`/nfts/${saleNft.nft.image.name}.png`)
+  const imgUrl = img(`/nfts/${saleNft.nft?.image?.name}.png`)
   return { backgroundImage: `url('${imgUrl}')` }
 })
-
-function actionEndedTimer() {
-  console.log('Акция закончилась')
-}
 </script>
 
 <template>
@@ -32,11 +29,11 @@ function actionEndedTimer() {
               <template v-slot:icon>
                 <IcoEye/>
               </template>
-              See NFT
+              Посмотреть NFT
             </Button>
           </div>
           <div class="section-nft-info__column">
-            <Timer class="section-nft-info__timer" :minutes="40" @ended="actionEndedTimer"/>
+            <ActionTimer :iso="isoTime" />
             <Button size="secondary" color="white" class="section-nft-info__button section-nft-info__button_desktop-hide">
               <template v-slot:icon>
                 <IcoEye/>

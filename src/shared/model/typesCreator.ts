@@ -2,8 +2,8 @@ export interface Nft {
   id?: number,
   name?: string,
   image?: {
-    name?: string,
-    alt?: string,
+    name: string,
+    alt: string,
   }
   forSale?: boolean,
   price?: number,
@@ -36,6 +36,12 @@ export interface Action {
   sale?: number,
   minutes?: number
   nft?: Nft
+}
+
+export interface SaleNftSection {
+  minutes?: number
+  nft?: Nft
+  sale?: number
 }
 
 export interface Creator {
