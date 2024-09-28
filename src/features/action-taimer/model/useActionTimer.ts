@@ -1,4 +1,3 @@
-import { getDeclension, days, hours, minutes, seconds} from "~/shared/utils/getDeclension";
 import { addLeadingZeros } from "~/shared/utils/formatTime";
 import { createTimer } from "~/entities/timer/lib/createTimer";
 
@@ -11,10 +10,16 @@ export const useActionTimer = (iso: string) => {
     return Object.keys(remainingTime).map(key => {
       let label = null
 
-      if (key === 'days') label = getDeclension(remainingTime[key], days);
-      if (key === 'hours') label = getDeclension(remainingTime[key], hours);
-      if (key === 'minutes') label = getDeclension(remainingTime[key], minutes);
-      if (key === 'seconds') label = getDeclension(remainingTime[key], seconds);
+      // if (key === 'days') label = getDeclension(remainingTime[key], days);
+      // if (key === 'hours') label = getDeclension(remainingTime[key], hours);
+      // if (key === 'minutes') label = getDeclension(remainingTime[key], minutes);
+      // if (key === 'seconds') label = getDeclension(remainingTime[key], seconds);
+
+      if (key === 'days') label = key;
+      if (key === 'hours') label = key;
+      if (key === 'minutes') label = key;
+      if (key === 'seconds') label = key;
+
 
       return {
         value: addLeadingZeros(remainingTime[key]),

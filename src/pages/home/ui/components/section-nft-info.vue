@@ -29,7 +29,7 @@ const backgroundStyles = computed(() => {
               <template v-slot:icon>
                 <IcoEye/>
               </template>
-              Посмотреть NFT
+              See NFT
             </Button>
           </div>
           <div class="section-nft-info__column">

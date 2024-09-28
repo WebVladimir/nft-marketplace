@@ -11,7 +11,7 @@ const dataTimer = timerModel.nowDataTimer
 <template>
   <Timer class="section-nft-info__timer">
     <template #caption>
-      <p>Акция закончится через:</p>
+      <p>Auction ends in:</p>
     </template>
     <template #items>
       <div v-for="(time, index) in dataTimer" :key="index" :class="[{'not-dot': time.key === 'days'}]">
