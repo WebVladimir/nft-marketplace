@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ButtonProps } from '../../button/model/typesButton'
+import {NuxtLink} from "#components";
 
 withDefaults(defineProps<ButtonProps>(), {
   size: 'primary',
@@ -7,13 +8,14 @@ withDefaults(defineProps<ButtonProps>(), {
   link: false,
   reverse: false,
   padding: 50,
-  color: 'purple'
+  color: 'purple',
+  is: 'div'
 })
 </script>
 
 <template>
   <component
-    :is="link ? 'a' : 'div'"
+    :is="link ? NuxtLink : is"
     :class="['button', size, type, color]"
   >
     <div :class="['button__inner', `button__inner_padding_${padding}`, {'button__inner_reverse': reverse}]">
@@ -41,6 +43,7 @@ withDefaults(defineProps<ButtonProps>(), {
 //Main
 .button {
   display: inline-block;
+  text-decoration: none;
 
   &__inner {
     display: flex;

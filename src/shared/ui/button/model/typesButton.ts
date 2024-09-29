@@ -8,6 +8,7 @@ export interface ButtonProps {
   type?: ButtonTypeType
   padding?: ButtonPaddingType
   color?: ButtonColorType
-  link?: boolean,
-  reverse?: boolean,
+  reverse?: boolean
+  is?: string
+  link?: boolean
 }

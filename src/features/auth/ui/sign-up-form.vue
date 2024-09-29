@@ -1,37 +1,89 @@
+<script setup lang="ts">
+import { useForm } from 'vee-validate';
+import * as yup from 'yup';
+
+const { handleSubmit } = useForm({
+  validationSchema: yup.object({
+    name: yup.string().required(),
+    email: yup.string().required().email(),
+    password: yup.string().required().min(6),
+    passwordConfirm: yup
+      .string()
+      .required()
+      .min(6)
+      .oneOf([yup.ref('password')]),
+  }),
+});
+
+const onSubmit = handleSubmit(values => {
+  console.log(values)
+});
+</script>
+
 <template>
   <div class="sign-up-form">
     <div class="sign-up-form__inner">
-      <form action="" class="sign-up-form__form">
+      <form class="sign-up-form__form">
         <div class="sign-up-form__fields">
-          <AppInput class="sign-up-form__input">
+          <AppInput
+            class="sign-up-form__input"
+            placeholder="Username"
+            name="name"
+          >
             <template v-slot:default>
               <IcoUser/>
             </template>
           </AppInput>
-          <AppInput class="sign-up-form__input">
+          <AppInput
+            class="sign-up-form__input"
+            placeholder="Email Address"
+            name="email"
+            type="email"
+          >
             <template v-slot:default>
               <IcoMail/>
             </template>
           </AppInput>
-          <AppInput class="sign-up-form__input">
+          <AppInput
+            class="sign-up-form__input"
+            placeholder="Password"
+            name="password"
+            type="password"
+          >
             <template v-slot:default>
               <IcoLock/>
             </template>
           </AppInput>
-          <AppInput class="sign-up-form__input">
+          <AppInput
+            class="sign-up-form__input"
+            placeholder="Confirm Password"
+            name="passwordConfirm"
+            type="password"
+          >
             <template v-slot:default>
               <IcoLock/>
             </template>
           </AppInput>
         </div>
 
-        <Button size="tertiary" class="sign-up-form__button">Create account</Button>
+        <div class="sign-up-form__buttons">
+          <Button size="tertiary" class="sign-up-form__button" @click="onSubmit">Create account</Button>
+          <Button size="tertiary" class="sign-up-form__button" link to="/sign-in" type="border">Login account</Button>
+        </div>
       </form>
     </div>
   </div>
 </template>
 
 <style lang="scss">
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+
+  &:hover {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+}
+
 .sign-up-form {
   &__input {
     &:not(:last-of-type) {
@@ -45,6 +97,12 @@
 
   &__button {
     width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
   }
 }
 </style>
+<script setup lang="ts">
+</script>

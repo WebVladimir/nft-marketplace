@@ -39,10 +39,25 @@ export default defineNuxtConfig({
   },
 
   css: ['normalize.css'],
-  modules: ['@nuxt/image', '@nuxtjs/device', '@pinia/nuxt'],
+  modules: [
+    '@nuxt/image',
+    '@nuxtjs/device',
+    '@pinia/nuxt',
+    '@vee-validate/nuxt'
+  ],
+
+  veeValidate: {
+    autoImports: true,
+  },
 
   image: {
     dir: 'app/assets/images',
     format: ['webp', 'png', 'jpg', 'jpeg'],
+  },
+
+  runtimeConfig: {
+    public: {
+      API_BASE_URL: process.env.API_BASE_URL || 'http://localhost:5000',
+    }
   }
 })
