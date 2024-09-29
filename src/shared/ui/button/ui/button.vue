@@ -9,7 +9,8 @@ withDefaults(defineProps<ButtonProps>(), {
   reverse: false,
   padding: 50,
   color: 'purple',
-  is: 'div'
+  is: 'div',
+  isLoading: false
 })
 </script>
 
@@ -19,6 +20,7 @@ withDefaults(defineProps<ButtonProps>(), {
     :class="['button', size, type, color]"
   >
     <div :class="['button__inner', `button__inner_padding_${padding}`, {'button__inner_reverse': reverse}]">
+      <Loading class="button__loading" v-show="isLoading" />
       <div class="button__ico" v-if="$slots.icon">
         <slot name="icon"/>
       </div>
@@ -89,6 +91,10 @@ withDefaults(defineProps<ButtonProps>(), {
     @include w-base;
     font-weight: 600;
     line-height: 0;
+  }
+
+  &__loading {
+    margin-right: 14px;
   }
 }
 

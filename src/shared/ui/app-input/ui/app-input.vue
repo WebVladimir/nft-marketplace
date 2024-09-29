@@ -4,9 +4,17 @@ interface Props {
   modelValue?: string | number
   name?: string,
   type?: string,
+  eye?: boolean
 }
 
 const props = defineProps<Props>()
+const input = ref<any>(null)
+const inputType = ref<any>('text')
+
+function toggleHide() {
+  inputType.value = input.value.type
+  input.value.type = input.value.type === 'password' ? 'text' : 'password'
+}
 
 const { value, errorMessage } = useField(() => props.name);
 </script>
@@ -18,6 +26,7 @@ const { value, errorMessage } = useField(() => props.name);
         <slot></slot>
       </div>
       <input
+        ref="input"
         autocomplete="off"
         class="app-input__field"
         :type="type || 'text'"
@@ -25,6 +34,11 @@ const { value, errorMessage } = useField(() => props.name);
         :placeholder="placeholder"
         v-model="value"
       >
+
+      <div class="app-input__eyes" @click="toggleHide" v-if="eye">
+        <IcoEye v-if="inputType === 'text'"/>
+        <IcoEyeHide v-if="inputType === 'password'"/>
+      </div>
     </div>
   </div>
 </template>
@@ -58,6 +72,15 @@ const { value, errorMessage } = useField(() => props.name);
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0) inset;
 
     transition: border .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+
+  &__eyes {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-44%);
+    color: $color-white-200;
+    cursor: pointer;
   }
 }
 

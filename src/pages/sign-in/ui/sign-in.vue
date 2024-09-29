@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SingInForm from "~/features/auth/ui/sing-in-form.vue";
+import SingInForm from "~/features/auth/ui/sign-in-form.vue";
 </script>
 
 <template>

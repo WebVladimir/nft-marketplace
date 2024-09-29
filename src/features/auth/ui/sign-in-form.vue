@@ -1,17 +1,7 @@
 <script setup lang="ts">
-import { useForm } from 'vee-validate';
-import * as yup from 'yup';
+import { useSignIn } from "../model/useSignIn";
 
-const { handleSubmit } = useForm({
-  validationSchema: yup.object({
-    name: yup.string().required(),
-    password: yup.string().required().min(6),
-  }),
-});
-
-const onSubmit = handleSubmit(values => {
-  console.log(values)
-});
+const { onSubmit, isLoading } = useSignIn()
 </script>
 
 <template>
@@ -31,7 +21,9 @@ const onSubmit = handleSubmit(values => {
           <AppInput
             class="sign-in-form__input"
             name="password"
+            type="password"
             placeholder="Password"
+            eye
           >
             <template v-slot:default>
               <IcoLock/>
@@ -40,7 +32,7 @@ const onSubmit = handleSubmit(values => {
         </div>
 
         <div class="sign-in-form__buttons">
-          <Button size="tertiary" class="sign-in-form__button" @click="onSubmit">Login account</Button>
+          <Button size="tertiary" class="sign-in-form__button" @click="onSubmit" :is-loading="isLoading">Login account</Button>
           <Button size="tertiary" class="sign-in-form__button" link to="/sign-up" type="border">Create account</Button>
         </div>
       </form>

@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   srcDir: 'src/',
 
   dir: {
-    pages: 'routes'
+    pages: 'routes',
+    middleware: 'app/middleware',
   },
 
   components: {

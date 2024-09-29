@@ -1,23 +1,7 @@
 <script setup lang="ts">
-import { useForm } from 'vee-validate';
-import * as yup from 'yup';
+import { useSingUp } from "../model/useSignUp";
 
-const { handleSubmit } = useForm({
-  validationSchema: yup.object({
-    name: yup.string().required(),
-    email: yup.string().required().email(),
-    password: yup.string().required().min(6),
-    passwordConfirm: yup
-      .string()
-      .required()
-      .min(6)
-      .oneOf([yup.ref('password')]),
-  }),
-});
-
-const onSubmit = handleSubmit(values => {
-  console.log(values)
-});
+const { onSubmit, isLoading } = useSingUp()
 </script>
 
 <template>
@@ -49,6 +33,7 @@ const onSubmit = handleSubmit(values => {
             placeholder="Password"
             name="password"
             type="password"
+            eye
           >
             <template v-slot:default>
               <IcoLock/>
@@ -59,6 +44,7 @@ const onSubmit = handleSubmit(values => {
             placeholder="Confirm Password"
             name="passwordConfirm"
             type="password"
+            eye
           >
             <template v-slot:default>
               <IcoLock/>
@@ -67,7 +53,7 @@ const onSubmit = handleSubmit(values => {
         </div>
 
         <div class="sign-up-form__buttons">
-          <Button size="tertiary" class="sign-up-form__button" @click="onSubmit">Create account</Button>
+          <Button size="tertiary" class="sign-up-form__button" @click="onSubmit" :is-loading="isLoading">Create account</Button>
           <Button size="tertiary" class="sign-up-form__button" link to="/sign-in" type="border">Login account</Button>
         </div>
       </form>
@@ -104,5 +90,3 @@ input:-webkit-autofill {
   }
 }
 </style>
-<script setup lang="ts">
-</script>

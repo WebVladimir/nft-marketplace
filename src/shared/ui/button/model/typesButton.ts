@@ -11,4 +11,5 @@ export interface ButtonProps {
   reverse?: boolean
   is?: string
   link?: boolean
+  isLoading?: boolean
 }
