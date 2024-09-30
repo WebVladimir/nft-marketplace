@@ -7,7 +7,7 @@ const { onSubmit, isLoading } = useSingUp()
 <template>
   <div class="sign-up-form">
     <div class="sign-up-form__inner">
-      <form class="sign-up-form__form">
+      <form class="sign-up-form__form" autocomplete="off">
         <div class="sign-up-form__fields">
           <AppInput
             class="sign-up-form__input"

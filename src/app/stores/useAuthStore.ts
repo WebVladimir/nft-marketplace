@@ -26,12 +26,23 @@ export const useAuthStore = defineStore('auth', {
     setToken (token: string) {
       const cookie = useCookie('authToken')
       cookie.value = token
-
       this.token = token;
     },
     setAuthenticated(user: User) {
       this.isAuthenticated = true;
       this.setUser(user)
     },
+    logout() {
+      const cookie = useCookie('authToken')
+      cookie.value = null;
+      this.isAuthenticated = false
+      this.token = null;
+      this.user = null
+
+      console.log(this.isAuthenticated)
+      console.log(this.token)
+      console.log(this.user)
+      console.log(cookie.value)
+    }
   }
 })

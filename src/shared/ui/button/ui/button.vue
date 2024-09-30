@@ -21,10 +21,10 @@ withDefaults(defineProps<ButtonProps>(), {
   >
     <div :class="['button__inner', `button__inner_padding_${padding}`, {'button__inner_reverse': reverse}]">
       <Loading class="button__loading" v-show="isLoading" />
-      <div class="button__ico" v-if="$slots.icon">
+      <div :class="['button__ico', {'button__ico_reset': !$slots.default}]" v-if="$slots.icon">
         <slot name="icon"/>
       </div>
-      <p class="button__text"><slot/></p>
+      <p class="button__text" v-if="$slots.default"><slot/></p>
     </div>
   </component>
 </template>
@@ -85,6 +85,10 @@ withDefaults(defineProps<ButtonProps>(), {
     width: 20px;
     height: 20px;
     margin-right: 12px;
+
+    &_reset {
+      margin: 0;
+    }
   }
 
   &__text {

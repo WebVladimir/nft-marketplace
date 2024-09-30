@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { useHeader } from "~/widgets/header/model/useHeader";
+import { useAuthStore } from "~/app/stores/useAuthStore";
 import {useRouter} from "#imports";
 
 const router = useRouter();
+const authStore = useAuthStore()
 
-import { useHeader } from "~/widgets/header/model/useHeader";
-const model = useHeader()
+const { menuLinks } = useHeader()
 
 const isOpen = ref(false)
 const isShowButtonSingUp = computed(() => {
@@ -34,7 +36,7 @@ function hideMenu() {
             <nuxt-link
               class="header__link"
               tag="a"
-              v-for="(link, index) in model.menuLinks"
+              v-for="(link, index) in menuLinks"
               :key="index"
               @click="hideMenu"
               :to="link.to"
@@ -42,8 +44,7 @@ function hideMenu() {
               {{ link.label }}
             </nuxt-link>
           </nav>
-
-          <NuxtLink to="/sign-up" class="header__button" v-if="isShowButtonSingUp" @click="hideMenu">
+          <NuxtLink to="/sign-up" class="header__button" v-if="!authStore.isAuthenticated && isShowButtonSingUp" @click="hideMenu">
             <Button size="secondary" :padding="30">
               <template v-slot:icon>
                 <icoUser />
@@ -51,6 +52,11 @@ function hideMenu() {
               Sign Up
             </Button>
           </NuxtLink>
+          <Button class="header__button" size="secondary" :padding="30" @click="authStore.logout()" v-if="authStore.isAuthenticated">
+            <template v-slot:icon>
+              <icoExit />
+            </template>
+          </Button>
         </div>
 
         <div :class="['header__burger', {'header__burger_active': isOpen}]" @click="openMenu">
@@ -77,6 +83,12 @@ function hideMenu() {
     @include tablet {
       padding: 15px 0;
       min-height: 54px;
+    }
+  }
+
+  &__button {
+    &:not(:last-child) {
+      margin-right: 10px;
     }
   }
 

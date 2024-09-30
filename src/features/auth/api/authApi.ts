@@ -22,3 +22,15 @@ export const login = async (credintails: {username: string, password: string}): 
     baseURL: config.public.API_BASE_URL
   })
 }
+
+export const auth = async (token: string): Promise<{ user: User; }> => {
+  const config = useRuntimeConfig()
+
+  return await $fetch("/api/users/auth", {
+    method: "GET",
+    headers: {
+      'x-auth-token': token
+    },
+    baseURL: config.public.API_BASE_URL
+  })
+}
