@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type {Creator, Nft} from '~/shared/model/typesCreator';
 
-defineProps<{nft: Nft, creator: Creator}>()
+defineProps<{nft: Nft, creator: Creator, bg: '100' | '200'}>()
 </script>
 
 <template>
@@ -10,7 +10,7 @@ defineProps<{nft: Nft, creator: Creator}>()
       <div class="card-nft__image">
         <NuxtImg class="card-nft__img" :src="`/nfts/${nft.image?.name}.png`" :alt="nft.image?.alt" />
       </div>
-      <div class="card-nft__bottom">
+      <div :class="['card-nft__bottom', {'bg-100': bg === '100'}, {'bg-200': bg === '200'}]">
         <CreatorMin class="card-nft__creator" :nft-name="nft.name" :creator="creator"/>
         <div class="card-nft__row">
           <div class="card-nft__column">
@@ -50,7 +50,7 @@ defineProps<{nft: Nft, creator: Creator}>()
 
   &__bottom {
     padding: 20px 30px 25px 30px;
-    background: $color-black-100;
+    //background: $color-black-100;
 
     @include mobile {
       padding: 20px 20px 25px 20px;
@@ -80,5 +80,11 @@ defineProps<{nft: Nft, creator: Creator}>()
       @include s-caption;
     }
   }
+}
+.card-nft__bottom.bg-100 {
+  background: $color-black-100;
+}
+.card-nft__bottom.bg-200 {
+  background: $color-black-200;
 }
 </style>

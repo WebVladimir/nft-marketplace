@@ -62,6 +62,6 @@ export const useNftStore = defineStore('nft', {
       state.nftActions = salesNfts;
 
       return salesNfts;
-    }
+    },
   }
 });

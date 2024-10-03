@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useSectionPreview } from "../../model/useSectionPreview";
-import type {Nft} from "~/shared/model/typesCreator";
+import type { Nft } from "~/shared/model/typesCreator";
 const model = useSectionPreview();
 
 const creatorNft = computed<Nft | undefined>(() => {
@@ -14,13 +14,11 @@ const creatorNft = computed<Nft | undefined>(() => {
       <div class="section-preview__inner">
         <div class="section-preview__column">
           <h1 class="section-preview__title">Discover digital art & Collect NFTs</h1>
-          <p class="section-preview__description">NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.</p>
+          <p class="section-preview__description">NFT marketplace UI created with Anima for Figma. Collect, buy and sell
+            art from more than 20k NFT artists.</p>
           <div class="section-preview__card section-preview__card_desktop-hide">
             <div class="section-preview__card-image">
-              <NuxtImg
-                :src="`/nfts/${creatorNft.image.name}.png`"
-                class="section-preview__card-img"
-              />
+              <NuxtImg :src="`/nfts/${creatorNft.image.name}.png`" class="section-preview__card-img" />
             </div>
             <div class="section-preview__card-bottom">
               <CreatorMin :nft-name="creatorNft?.name" :creator="model.creator" />
@@ -28,7 +26,7 @@ const creatorNft = computed<Nft | undefined>(() => {
           </div>
           <Button class="section-preview__button">
             <template v-slot:icon>
-              <IcoRocket/>
+              <IcoRocket />
             </template>
             Get Started
           </Button>
@@ -51,10 +49,7 @@ const creatorNft = computed<Nft | undefined>(() => {
         <div class="section-preview__column section-preview__column_mobile-hide">
           <div class="section-preview__card">
             <div class="section-preview__card-image">
-              <NuxtImg
-                :src="`/nfts/${creatorNft?.image.name}.png`"
-                class="section-preview__card-img"
-              />
+              <NuxtImg :src="`/nfts/${creatorNft?.image.name}.png`" class="section-preview__card-img" />
             </div>
             <div class="section-preview__card-bottom">
               <CreatorMin :nft-name="creatorNft?.name" :creator="model.creator" />
