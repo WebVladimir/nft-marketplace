@@ -27,6 +27,12 @@ input, textarea {
   }
 }
 
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
 img, video {
   display: block;
   max-width: 100%;
@@ -60,4 +66,13 @@ img, video {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s ease-in-out;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
 }

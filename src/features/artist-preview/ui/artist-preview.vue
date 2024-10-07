@@ -1,6 +1,18 @@
 <script setup lang="ts">
+import type { User } from "~/entities/user/model/user";
+import {useRouter} from "#imports";
 
-const creatorName = ref('Animakid')
+interface Props {
+  creator: User | null
+  editProfile: boolean
+}
+withDefaults(defineProps<Props>(), {
+  editProfile: false
+})
+const router = useRouter();
+
+const isShowButtonFollow = computed(() => router.currentRoute.value.name !== 'profile')
+
 const mockItems = ref([
   {
     value: 250,
@@ -45,19 +57,36 @@ const socials = ref([
   <div class="artist-preview">
     <div class="artist-preview__container container">
       <div class="artist-preview__inner">
-        <p class="artist-preview__name">{{ creatorName }}</p>
+        <p class="artist-preview__name">{{ creator?.name }}</p>
         <div class="artist-preview__buttons">
-          <Button size="secondary" :padding="30" class="artist-preview__button">
+          <Button size="secondary" :padding="30" class="artist-preview__button" v-if="creator?.nftWallet">
             <template #icon>
               <IcoCopy/>
             </template>
-            0xc0E3...B79C
+            {{ creator?.nftWallet }}
           </Button>
-          <Button size="secondary" type="border" :padding="30" class="artist-preview__button">
+          <Button
+            size="secondary"
+            type="border"
+            :padding="30"
+            class="artist-preview__button"
+            v-if="isShowButtonFollow"
+          >
             <template #icon>
               <IcoPlus/>
             </template>
             Follow
+          </Button>
+
+          <Button
+            size="secondary"
+            :padding="30"
+            class="artist-preview__button"
+            link
+            to="/profile/edit"
+            v-if="editProfile"
+          >
+            Edit
           </Button>
         </div>
         <div class="artist-preview__items">
@@ -68,9 +97,9 @@ const socials = ref([
         </div>
 
         <div class="artist-preview__boxes">
-          <div class="artist-preview__box">
+          <div class="artist-preview__box" v-if="creator?.about">
             <p class="artist-preview__box-label">Bio</p>
-            <p class="artist-preview__text">The internet's friendliest designer kid.</p>
+            <p class="artist-preview__text">{{ creator?.about }}</p>
           </div>
           <div class="artist-preview__box">
             <p class="artist-preview__box-label">Links</p>
@@ -82,10 +111,8 @@ const socials = ref([
           </div>
         </div>
 
-
-
         <div class="artist-preview__avatar">
-          <NuxtImg src="/avatars/avatar-test.png" class="artist-preview__avatar-img" />
+          <img :src="creator?.avatar?.url" class="artist-preview__avatar-img" />
         </div>
       </div>
     </div>
@@ -143,6 +170,8 @@ const socials = ref([
   }
 
   &__buttons {
+    display: flex;
+    align-items: center;
     position: absolute;
     right: 0;
     top: 40px;
@@ -154,7 +183,6 @@ const socials = ref([
     }
 
     @include mobile {
-      display: flex;
       flex-direction: column;
     }
   }
@@ -166,6 +194,10 @@ const socials = ref([
       @include mobile {
         margin: 0 0 20px 0;
       }
+    }
+
+    @include mobile {
+      width: 100%;
     }
   }
 

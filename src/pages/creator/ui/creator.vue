@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import ArtistPreview from "~/features/artist-preview/ui/artist-preview.vue";
 import ContentList from "~/pages/creator/ui/components/content-list.vue";
+
+import { useCreator } from "~/pages/creator/model/useCreator";
+
+const { creator } = useCreator();
 </script>
 
 <template>
@@ -11,7 +15,7 @@ import ContentList from "~/pages/creator/ui/components/content-list.vue";
       </div>
     </div>
     <div class="creator-page__info">
-      <ArtistPreview />
+      <ArtistPreview :creator="creator" />
       <div class="creator-page__divider" />
       <div class="container">
         <Tabs />

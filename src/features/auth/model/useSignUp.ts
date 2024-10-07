@@ -23,7 +23,7 @@ export const useSingUp = () => {
   const onSubmit = handleSubmit(values => {
     isLoading.value = true
     registerUser({
-      username: values.name,
+      name: values.name,
       email: values.email,
       password: values.password,
     }).then(() => {

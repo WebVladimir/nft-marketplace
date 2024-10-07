@@ -5,6 +5,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src/',
 
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
+
   dir: {
     pages: 'routes',
     middleware: 'app/middleware',

@@ -24,12 +24,15 @@ const creatorNft = computed<Nft | undefined>(() => {
               <CreatorMin :nft-name="creatorNft?.name" :creator="model.creator" />
             </div>
           </div>
-          <Button class="section-preview__button">
-            <template v-slot:icon>
-              <IcoRocket />
-            </template>
-            Get Started
-          </Button>
+          <NuxtLink to="/sign-in" v-if="!model.authStore.isAuthenticated">
+            <Button class="section-preview__button">
+              <template v-slot:icon>
+                <IcoRocket />
+              </template>
+              Get Started
+            </Button>
+          </NuxtLink>
+
           <div class="section-preview__items">
             <div class="section-preview__item">
               <p class="section-preview__item-count">240k+</p>

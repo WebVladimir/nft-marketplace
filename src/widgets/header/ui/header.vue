@@ -13,6 +13,10 @@ const isShowButtonSingUp = computed(() => {
   return router.currentRoute.value.name !== 'sign-up'
 })
 
+const isShowButtonProfile = computed(() => {
+  return router.currentRoute.value.name !== 'profile'
+})
+
 function openMenu() {
   isOpen.value = !isOpen.value
   document.body.classList.toggle('lock', isOpen.value)
@@ -32,6 +36,7 @@ function hideMenu() {
           <img src="/images/logo.svg" alt="logo" class="header__logo-img">
         </nuxt-link>
         <div :class="['header__body', {'header__body_active': isOpen}]" ref="headerBody">
+
           <nav class="header__menu">
             <nuxt-link
               class="header__link"
@@ -44,19 +49,51 @@ function hideMenu() {
               {{ link.label }}
             </nuxt-link>
           </nav>
-          <NuxtLink to="/sign-up" class="header__button" v-if="!authStore.isAuthenticated && isShowButtonSingUp" @click="hideMenu">
-            <Button size="secondary" :padding="30">
-              <template v-slot:icon>
-                <icoUser />
-              </template>
-              Sign Up
-            </Button>
-          </NuxtLink>
-          <Button class="header__button" size="secondary" :padding="30" @click="authStore.logout()" v-if="authStore.isAuthenticated">
+
+          <Button
+            v-if="!authStore.isAuthenticated && isShowButtonSingUp"
+            class="header__button"
+            size="secondary"
+            :padding="30"
+            link
+            to="/sign-up"
+            @click="hideMenu"
+          >
             <template v-slot:icon>
-              <icoExit />
+              <icoUser />
             </template>
+            Sign Up
           </Button>
+
+          <TransitionGroup name="header-buttons" v-if="authStore.isAuthenticated">
+            <Button
+              class="header__button"
+              type="fill"
+              color="purple"
+              size="secondary"
+              :padding="30"
+              link
+              to="/profile"
+              v-if="authStore.isAuthenticated && isShowButtonProfile"
+            >
+              Profile
+            </Button>
+            <Button
+              link
+              to="/"
+              class="header__button"
+              type="fill"
+              color="purple"
+              size="secondary"
+              :padding="30"
+              @click="authStore.logout()"
+              v-if="authStore.isAuthenticated"
+            >
+              <template v-slot:icon>
+                <icoExit />
+              </template>
+            </Button>
+          </TransitionGroup>
         </div>
 
         <div :class="['header__burger', {'header__burger_active': isOpen}]" @click="openMenu">
@@ -71,8 +108,6 @@ function hideMenu() {
 
 <style scoped lang="scss">
 .header {
-
-
   &__inner {
     display: flex;
     align-items: center;
@@ -245,5 +280,15 @@ function hideMenu() {
   &:hover:after {
     opacity: 1;
   }
+}
+
+.header-buttons-enter-active,
+.header-buttons-leave-active {
+  transition: all 0.5s ease;
+}
+.header-buttons-enter-from,
+.header-buttons-leave-to {
+  transform: translateX(100%) scale(0);
+  opacity: 0;
 }
 </style>

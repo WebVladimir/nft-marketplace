@@ -18,7 +18,7 @@ export const useSignIn = () => {
     isLoading.value = true
 
     loginUser({
-      username: values.name,
+      name: values.name,
       password: values.password,
     }).then(() => {
       isLoading.value = false

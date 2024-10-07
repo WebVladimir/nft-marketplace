@@ -4,17 +4,17 @@ import { useCookie } from "#app";
 
 interface State {
   user: User | null,
-  token: string | null | undefined,
+  token: string,
   isAuthenticated: boolean,
 }
 
 export const useAuthStore = defineStore('auth', {
   state: (): State => {
-    const cookie = useCookie('authToken')
+    const cookie: any = useCookie('authToken')
 
     return {
       user: null,
-      token: cookie.value || null,
+      token: cookie.value,
       isAuthenticated: false
     }
   },
@@ -36,13 +36,8 @@ export const useAuthStore = defineStore('auth', {
       const cookie = useCookie('authToken')
       cookie.value = null;
       this.isAuthenticated = false
-      this.token = null;
+      this.token = '';
       this.user = null
-
-      console.log(this.isAuthenticated)
-      console.log(this.token)
-      console.log(this.user)
-      console.log(cookie.value)
     }
   }
 })
